@@ -1,7 +1,1 @@
-@extends('layout')
-@section('title',"Home Page")
-@section('content')
-    @auth
-    {{auth()->user()->name}}
-    @endauth
-@endsection
+<h1>Welcome to my Project</h1>
