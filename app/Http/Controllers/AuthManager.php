@@ -11,14 +11,14 @@ class AuthManager extends Controller
 {
     function login() {
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
         return view('login');
     }
 
     function register() {
         if (Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('login');
         }
         return view('registration');
     }
@@ -32,7 +32,7 @@ class AuthManager extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
 
         return redirect()->back()->with("error", "Invalid credentials");
