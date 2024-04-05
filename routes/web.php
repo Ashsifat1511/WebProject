@@ -19,7 +19,13 @@ Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/items', [ItemController::class, 'index'])->name('items');
-    Route::get('/customers', [CustomerController::class, 'index'])->name('customers');
+    Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
+    Route::get('/customers/search', [CustomerController::class, 'search'])->name('customers.search');
+    Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
+    Route::post('/customers', [CustomerController::class, 'store'])->name('customers.store');
+    Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
+    Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('customers.update');
+    Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customers.destroy');
     Route::get('/sells', [SellController::class, 'index'])->name('sells');
     Route::get('/rentals', [RentalController::class, 'index'])->name('rentals');
     Route::get('/update-due', [UpdateDueController::class, 'index'])->name('update-due');
