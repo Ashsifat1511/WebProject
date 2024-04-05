@@ -42,15 +42,17 @@ class AuthManager extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'role' => 'required'
         ]);
-
-        $data['name']=$request->name;
-        $data['email']=$request->email;
-        $data['password']=Hash::make($request->password);
-
+    
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['password'] = Hash::make($request->password);
+        $data['role'] = $request->role; // Assign selected role from the form
+    
         $user = User::create($data);
-
+    
         if (!$user) {
             return redirect()->back()->with('error', 'Failed to register');
         }

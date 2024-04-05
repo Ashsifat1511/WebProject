@@ -1,45 +1,69 @@
-/* styles.css */
+/* dashboard.css */
 
+/* Global styles */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 .sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 250px;
     height: 100%;
-    width: 200px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #263238; /* Sidebar background color */
+    overflow-x: hidden;
     padding-top: 20px;
 }
 
-.sidebar h2 {
-    color: white; /* Sidebar title color */
-    text-align: center;
+.content {
+    margin-left: 250px; /* Adjust this value to match the width of the sidebar */
+    padding: 20px;
 }
 
-.sidebar ul {
+h2 {
+    color: #333;
+}
+
+ul {
     list-style-type: none;
     padding: 0;
-    text-align: center;
 }
 
-.sidebar ul li {
-    padding: 10px 0;
+.menu li {
+    margin-bottom: 10px;
 }
 
-.sidebar ul li a {
-    color: white; /* Link color */
+.menu a {
+    display: block;
+    color: #fff;
     text-decoration: none;
+    padding: 10px;
 }
 
-.sidebar ul li a:hover {
-    color: #16861c; /* Link hover color */
+.menu a:hover {
+    background-color: #555;
 }
 
-.content {
-    margin-left: 200px; /* Adjust this value to match sidebar width */
-    padding: 20px;
+.clock {
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.current-user {
+    margin-top: 20px;
+}
+
+.current-user ul {
+    list-style: none;
+    padding: 0;
+}
+
+.current-user li {
+    margin-bottom: 5px;
 }

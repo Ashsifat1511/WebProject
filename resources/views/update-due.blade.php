@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Update the dues</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
@@ -34,8 +34,8 @@
     </div>
     
     <div class="content">
-        <h2>Dashboard</h2>
-        <p>Welcome to the dashboard</p>
+        <h2>Update Dues</h2>
+        <p>Welcome to the Due Update</p>
     </div>
     <script src="js/clock.js"></script>
 </body>
