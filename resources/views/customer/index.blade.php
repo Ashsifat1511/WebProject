@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customers</title>
+    <title>Customer Management</title>
     <link rel="stylesheet" href="css/customer.css">
 </head>
 
@@ -34,7 +34,6 @@
             </ul>
         </div>
     </div>
-
     <div class="content">
         <h1>Customer Management</h1>
 
@@ -51,6 +50,10 @@
                     <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Gender</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -60,6 +63,10 @@
                     <td>{{ $customer->id }}</td>
                     <td>{{ $customer->first_name }}</td>
                     <td>{{ $customer->last_name }}</td>
+                    <td>{{ $customer->address }}</td>
+                    <td>{{ $customer->phone }}</td>
+                    <td>{{ $customer->email }}</td>
+                    <td>{{ $customer->gender }}</td>
                     <td>
                         <a href="{{ route('customers.edit', $customer->id) }}">Edit</a>
                         <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
