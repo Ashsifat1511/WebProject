@@ -36,36 +36,58 @@
     </div>
 
     <div class="content">
-        <h1>Customer Management</h1>
+        <div>
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+            @if (session('error'))
+            <div class="alert alert-error">
+                {{ session('error') }}
+            </div>
+            @endif
+        </div>
+        <h1>Items Management</h1>
 
-        <form action="{{ route('customers.search') }}" method="GET">
+        <form action="{{ route('items.search') }}" method="GET">
             <input type="text" name="query" placeholder="Search by name...">
             <button type="submit">Search</button>
         </form>
 
-        <a href="{{ route('customers.create') }}">Add New Customer</a>
+        <a href="{{ route('items.create') }}">Add New Item</a>
 
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
+                    <th>Stock</th>
+                    <th>Rental/Sale</th>
+                    <th>Sale Price</th>
+                    <th>Rent Rate</th>
+                    <th>Photo</th>
+                    <th>Item Type</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($customers as $customer)
+                @foreach ($items as $item)
                 <tr>
-                    <td>{{ $customer->id }}</td>
-                    <td>{{ $customer->first_name }}</td>
-                    <td>{{ $customer->last_name }}</td>
+                    <td>{{ $item->itemID }}</td>
+                    <td>{{ $item->itemName }}</td>
+                    <td>{{ $item->stock }}</td>
+                    <td>{{ $item->rentalOrSale }}</td>
+                    <td>{{ $item->salePrice }}</td>
+                    <td>{{ $item->rentRate }}</td>
+                    <td>{{ $item->photo }}</td>
+                    <td>{{ $item->itemType }}</td>
                     <td>
-                        <a href="{{ route('customers.edit', $customer->id) }}">Edit</a>
-                        <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
+                        <a href="{{ route('items.edit', $item->itemID) }}">Edit</a>
+                        <form action="{{ route('items.destroy', $item->itemID) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" onclick="return confirm('Are you sure you want to delete this customer?')">Delete</button>
+                            <button type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>

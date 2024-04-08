@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Customer;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -27,6 +28,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('1234'),
             'role' => 'Employee',
         ]);
+        $this->call(CustomerSeeder::class);
+        $this->call(ItemSeeder::class);
     }
 }
 
