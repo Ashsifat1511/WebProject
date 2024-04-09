@@ -1,5 +1,5 @@
 /* Style for the form container */
-form {
+content.form {
     width: 400px; /* Adjust the width as needed */
     margin: 0 auto; /* Center the form horizontally */
     padding: 20px;

@@ -41,12 +41,14 @@ class AuthManager extends Controller
     function registerPost(Request $request){
         $request->validate([
             'name' => 'required',
+            'username' => 'required|unique:users,username', // Check unique username from 'users' table
             'email' => 'required|email',
             'password' => 'required',
             'role' => 'required'
         ]);
     
         $data['name'] = $request->name;
+        $data['username'] = $request->username;
         $data['email'] = $request->email;
         $data['password'] = Hash::make($request->password);
         $data['role'] = $request->role; // Assign selected role from the form
