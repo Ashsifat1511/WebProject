@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="css/customeradd.css">
 </head>
 <body>
-    <h1>Add New Customer</h1>
+    <div>
+        @if ($errors->any())
+            <div>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
+    <div>
+        @if (session('success'))
+            <div>
+                {{ session('success') }}
+            </div>
+        @endif
+    </div>
+    <h1>Add New Item</h1>
 
     <form action="{{ route('items.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -39,8 +57,8 @@
             <input type="file" id="photo" name="photo">
         </div>
         <div>
-            <label for="ItemType_itemTypeId">Item Type:</label>
-            <select id="ItemType_itemTypeId" name="ItemType_itemTypeId">
+            <label for="itemType">Item Type:</label>
+            <select id="itemType" name="itemType">
                 <option value="1">Electronics</option>
                 <option value="2">Gaming</option>
                 <option value="3">Furniture</option>

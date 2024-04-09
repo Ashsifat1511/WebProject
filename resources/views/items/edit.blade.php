@@ -23,8 +23,8 @@
         <div>
             <label for="rentalOrSale">Rental/Sale:</label>
             <select id="rentalOrSale" name="rentalOrSale">
-                <option value="Rental" {{ $item->rentalOrSale == 'Rental' ? 'selected' : '' }}>Rental</option>
-                <option value="Sale" {{ $item->rentalOrSale == 'Sale' ? 'selected' : '' }}>Sale</option>
+                <option value="Rental">Rental</option>
+                <option value="Sale">Sale</option>
             </select>
         </div>
         <div>
@@ -40,8 +40,8 @@
             <input type="file" id="photo" name="photo">
         </div>
         <div>
-            <label for="ItemType_itemTypeId">Item Type:</label>
-            <select id="ItemType_itemTypeId" name="ItemType_itemTypeId">
+            <label for="itemType">Item Type:</label>
+            <select id="itemType" name="itemType">
                 <option value="Electronics">Electronics</option>
                 <option value="Gaming">Gaming</option>
                 <option value="Furniture">Furniture</option>

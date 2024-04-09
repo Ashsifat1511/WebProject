@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('itemID');
             $table->string('itemName');
             $table->integer('stock');
-            $table->set('rentalOrSale', ['Rental', 'Sale']);
+            $table->enum('rentalOrSale', ['Rental', 'Sale']);
             $table->double('salePrice')->nullable();
             $table->double('rentRate')->nullable();
             $table->string('photo')->nullable();
