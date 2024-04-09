@@ -39,9 +39,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customers.destroy');
 
+    //all routes for sells
+    Route::get('/sells', [SellController::class, 'index'])->name('sells.index');
+    Route::get('/sells/create', [SellController::class, 'create'])->name('sells.create');
+    Route::post('/sells', [SellController::class, 'store'])->name('sells.store');
 
 
-    Route::get('/sells', [SellController::class, 'index'])->name('sells');
+
     Route::get('/rentals', [RentalController::class, 'index'])->name('rentals');
     Route::get('/update-due', [UpdateDueController::class, 'index'])->name('update-due');
     Route::get('/accounts', [AccountController::class, 'index'])->name('accounts');

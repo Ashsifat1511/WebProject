@@ -31,7 +31,7 @@ class ItemSeeder extends Seeder
                 'itemName' => 'Item 2',
                 'stock' => 10,
                 'rentalOrSale' => 'Sale',
-                'salePrice' => 20000.00, // Assuming 'Item 2' is for sale
+                'salePrice' => 2000.00, // Assuming 'Item 2' is for sale
                 'rentRate' => 0.00, // Assuming no rent rate for 'Item 2'
                 'photo' => 'item2.jpg', // Assuming the photo is stored in 'public/storage/item2.jpg'
                 'itemType' => 'Gaming',
