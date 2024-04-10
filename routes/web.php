@@ -52,7 +52,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-    Route::get('/update-due', [UpdateDueController::class, 'index'])->name('update-due');
     Route::get('/accounts', [AccountController::class, 'index'])->name('accounts');
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
