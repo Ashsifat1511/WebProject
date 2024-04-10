@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items</title>
-    <link rel="stylesheet" href="css/customer.css">
+    <title>Accounts</title>
+    <link rel="stylesheet" href="css/accounts.css">
 </head>
 
 <body>
@@ -48,48 +48,35 @@
             </div>
             @endif
         </div>
-        <h1>Items Management</h1>
+        <h1>Accounts Management</h1>
 
-        <form action="{{ route('items.search') }}" method="GET">
+        <form action="{{ route('accounts.search') }}" method="GET">
             <input type="text" name="query" placeholder="Search by name...">
             <button type="submit">Search</button>
         </form>
 
-        <a href="{{ route('items.create') }}">Add New Item</a>
+        <a href="{{ route('accounts.create') }}">New Account Add</a>
 
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Stock</th>
-                    <th>Rental/Sale</th>
-                    <th>Sale Price</th>
-                    <th>Rent Rate</th>
-                    <th>Photo</th>
-                    <th>Item Type</th>
-                    <th>Actions</th>
+                    <th>Account ID</th>
+                    <th>Account Name</th>
+                    <th>Account Details</th>
+                    <th>Customer ID</th>
+                    <th> Issued By</th>
+                    <th>Pay Method</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($items as $item)
+                @foreach ($accounts as $account)
                 <tr>
-                    <td>{{ $item->itemID }}</td>
-                    <td>{{ $item->itemName }}</td>
-                    <td>{{ $item->stock }}</td>
-                    <td>{{ $item->rentalOrSale }}</td>
-                    <td>{{ $item->salePrice }}</td>
-                    <td>{{ $item->rentRate }}</td>
-                    <td>{{ $item->photo }}</td>
-                    <td>{{ $item->itemType }}</td>
-                    <td>
-                        <a href="{{ route('items.edit', $item->itemID) }}">Edit</a>
-                        <form action="{{ route('items.destroy', $item->itemID) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
+                    <td>{{ $account->accountID }}</td>
+                    <td>{{ $account->accountName }}</td>
+                    <td>{{ $account->accountDetails }}</td>
+                    <td>{{ $account->Customers_customerID }}</td>
+                    <td>{{ $account->User_username }}</td>
+                    <td>{{ $account->payMethod }}</td>
                 </tr>
                 @endforeach
             </tbody>
