@@ -45,8 +45,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/sells', [SellController::class, 'store'])->name('sells.store');
 
 
+    //all routes for rentals
+    Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
+    Route::get('/rentals/create', [RentalController::class, 'create'])->name('rentals.create');
+    Route::post('/rentals', [RentalController::class, 'store'])->name('rentals.store');
 
-    Route::get('/rentals', [RentalController::class, 'index'])->name('rentals');
+
+
     Route::get('/update-due', [UpdateDueController::class, 'index'])->name('update-due');
     Route::get('/accounts', [AccountController::class, 'index'])->name('accounts');
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
