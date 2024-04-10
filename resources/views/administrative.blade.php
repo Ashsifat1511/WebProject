@@ -24,6 +24,7 @@
             <li><a href="/logout">Logout</a></li>
         </ul>
         </div>
+        <div><h3>Current time:</h3></div>
         <div id="clock" class="clock"></div>
         <div class="current-user">
             <ul>

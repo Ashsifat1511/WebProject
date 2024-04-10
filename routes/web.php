@@ -51,8 +51,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/rentals', [RentalController::class, 'store'])->name('rentals.store');
 
 
+    //all routes for accounts
+    Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
+    Route::get('/accounts/search', [AccountController::class, 'search'])->name('accounts.search');
+    Route::get('/accounts/create', [AccountController::class, 'create'])->name('accounts.create');
+    Route::post('/accounts', [AccountController::class, 'store'])->name('accounts.store');
 
-    Route::get('/accounts', [AccountController::class, 'index'])->name('accounts');
+
+
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 });
 Route::get('/register', [AuthManager::class, 'register'])->name('register');
