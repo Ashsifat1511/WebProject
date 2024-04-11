@@ -48,7 +48,7 @@
             </div>
             @endif
         </div>
-        <h1>Sells Management</h1>
+        <h1>Rental Management</h1>
 
         <a href="{{ route('rentals.create') }}">New Rental Add</a>
 
