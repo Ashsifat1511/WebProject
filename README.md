@@ -50,6 +50,11 @@ php artisan migrate --seed
 ```
 php artisan serve
 ```
+9. Credentials
+```
+sifatashrarul@gmail.com
+1234
+```
 ## Support and Contact
 
 For any assistance or inquiries, feel free to connect with me on sifatashrarul@gmail.com
