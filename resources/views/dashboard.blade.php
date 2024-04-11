@@ -35,9 +35,16 @@
     </div>
     
     <div class="content">
-        <h2>Dashboard</h2>
-        <p>Welcome to the dashboard</p>
+    <h2>Dashboard</h2>
+    <p>Welcome to the dashboard</p>
+    
+    <div>
+        <h3>Total Sell Amount Today: ${{ $totalSellToday }}</h3>
+        <h3>Total Rent Amount Today: ${{ $totalRentToday }}</h3>
+        <h3>Total Due Today: ${{ $totalDueToday }}</h3>
     </div>
+</div>
+
     <script src="js/clock.js"></script>
 </body>
 </html>
