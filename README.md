@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Product Sell and Rental Service Management
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+1. Product sell and rental service management involves the administration and oversight of transactions related to the sale and rental of products or services. This encompasses various aspects, including inventory management, customer interaction, billing, and tracking of sales and rentals.
 
-## About Laravel
+2. Customer Interaction: Effective customer interaction is crucial for successful product sell and rental service management. This includes providing excellent customer service, addressing customer inquiries and concerns, and ensuring a seamless experience throughout the sales or rental process.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+3. Sales and Rental Tracking: Tracking sales and rentals is vital for assessing business performance and identifying areas for improvement. This involves monitoring sales and rental transactions, analyzing sales data to identify trends and patterns, and generating reports to provide insights into business performance.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Overall, effective product sell and rental service management requires careful planning, efficient operations, and a focus on delivering exceptional customer experiences. By implementing robust management practices and leveraging technology solutions, businesses can streamline their operations, enhance customer satisfaction, and drive growth in their product sell and rental service offerings.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Requirements
 
-## Learning Laravel
+The only thing you need to install locally is [Composer](https://getcomposer.org/) and [Xaamp](https://www.apachefriends.org/download.html)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. Clone This Repository
+    ```
+    git clone https://github.com/Ashsifat1511/WebProject.git
+    ```
+2. Go to the repository
+    ```
+    cd WebProject
+    ```
+3. Install the dependencies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+composer install
+```
 
-## Laravel Sponsors
+3. Copy `.env.example` to `.env`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```
+cp .env.example .env
+```
 
-### Premium Partners
+4. Generate application key
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```
+php artisan key:generate
+```
 
-## Contributing
+5. Configure your database connection in `.env` file. Add your preferred database name in `DB_DATABASE` variable.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=social_app_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+6. Start XAMPP Control Panel and start the MySQL server.
+7. Run the migration with seeders
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```
+php artisan migrate --seed
+```
 
-## Security Vulnerabilities
+8. Start the web server
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+php artisan serve
+```
+## Support and Contact
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+For any assistance or inquiries, feel free to connect with me on sifatashrarul@gmail.com
