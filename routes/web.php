@@ -58,9 +58,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/accounts', [AccountController::class, 'store'])->name('accounts.store');
 
 
-
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    //all routes for admin
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/sell-report', [AdminController::class, 'showSells'])->name('admin.sells');
+    Route::get('/admin/rent-report', [AdminController::class, 'showRentals'])->name('admin.rentals');
+    Route::get('/admin/show-employee', [AdminController::class, 'showUsers'])->name('admin.employee');
+    Route::get('/admin/add-employee', [AdminController::class, 'addEmployee'])->name('admin.add-employee');
+    Route::post('/admin/add-employee', [AdminController::class, 'storeEmployee'])->name('admin.add-employee.post');
+    Route::delete('/admin/employee/{id}', [AdminController::class, 'destroy'])->name('employees.destroy');
 });
-Route::get('/register', [AuthManager::class, 'register'])->name('register');
-Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
