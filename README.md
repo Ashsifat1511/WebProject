@@ -18,7 +18,7 @@ The only thing you need to install locally is [Composer](https://getcomposer.org
 ```
 git clone https://github.com/Ashsifat1511/WebProject.git
 
-cd lab-9/social-app
+cd WebProject
 ```
 2. Install the dependencies
 ```
