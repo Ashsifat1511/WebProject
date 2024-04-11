@@ -14,34 +14,25 @@ The only thing you need to install locally is [Composer](https://getcomposer.org
 
 # Installation
 
-1. Clone This Repository
-    ```
-    git clone https://github.com/Ashsifat1511/WebProject.git
-    ```
-2. Go to the repository
-    ```
-    cd WebProject
-    ```
-3. Install the dependencies
+1. Clone the project and change the directory
+```
+git clone https://github.com/Ashsifat1511/WebProject.git
 
+cd lab-9/social-app
+```
+2. Install the dependencies
 ```
 composer install
 ```
-
 3. Copy `.env.example` to `.env`
-
 ```
 cp .env.example .env
 ```
-
-4. Generate application key
-
+4. Generate application key 
 ```
 php artisan key:generate
 ```
-
 5. Configure your database connection in `.env` file. Add your preferred database name in `DB_DATABASE` variable.
-
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -50,16 +41,12 @@ DB_DATABASE=social_app_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-
 6. Start XAMPP Control Panel and start the MySQL server.
 7. Run the migration with seeders
-
 ```
 php artisan migrate --seed
 ```
-
 8. Start the web server
-
 ```
 php artisan serve
 ```
