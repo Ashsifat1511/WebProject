@@ -7,6 +7,7 @@
 3. Sales and Rental Tracking: Tracking sales and rentals is vital for assessing business performance and identifying areas for improvement. This involves monitoring sales and rental transactions, analyzing sales data to identify trends and patterns, and generating reports to provide insights into business performance.
 
 Overall, effective product sell and rental service management requires careful planning, efficient operations, and a focus on delivering exceptional customer experiences. By implementing robust management practices and leveraging technology solutions, businesses can streamline their operations, enhance customer satisfaction, and drive growth in their product sell and rental service offerings.
+This project has been made for my University course CSE-3100(Web Engineering Labratory). I really wroked hard to learn the basics of laravel to seek a career as a developer in future. Further I'll create more laravel projects in future just only to improve my skills and fun.
 
 # Requirements
 

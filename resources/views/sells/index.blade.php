@@ -50,10 +50,14 @@
         </div>
         <h1>Sells Management</h1>
 
+        <!-- Link to create a new purchase -->
         <a href="{{ route('sells.create') }}">New Purchase Add</a>
 
+        <!-- Table displaying recent purchases -->
         <table>
+            <!-- Table headers -->
             <thead>
+                <!-- Table row for headers -->
                 <tr>
                     <th>Purchase ID</th>
                     <th>Purchase Date</th>
@@ -63,11 +67,14 @@
                     <th>Item ID</th>
                     <th>Customer ID</th>
                     <th>Amount Paid</th>
+                    <th>Update Dues</th> <!-- New column for update option -->
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop through recent purchases and display them -->
                 @foreach ($recentPurchases as $purchase)
                 <tr>
+                    <!-- Display purchase details -->
                     <td>{{ $purchase->purchaseID }}</td>
                     <td>{{ $purchase->purchaseDate }}</td>
                     <td>{{ $purchase->purchaseQuantity }}</td>
@@ -76,6 +83,10 @@
                     <td>{{ $purchase->Item_itemID }}</td>
                     <td>{{ $purchase->Customers_customerID }}</td>
                     <td>{{ $purchase->payAmount }}</td>
+                    <!-- Button to update dues for this purchase -->
+                    <td>
+                    <a href="{{ route('sells.update-due', $purchase->purchaseID) }}">Update</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
