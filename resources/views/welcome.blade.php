@@ -17,6 +17,9 @@
         <p>Product sell and rental service management involves the administration and oversight of transactions related to the sale and rental of products or services. This encompasses various aspects, including inventory management, customer interaction, billing, and tracking of sales and rentals.</p>
     </section>
     <section>
+        <p>This project has been made for my University course CSE-3100(Web Engineering Labratory). I really wroked hard to learn the basics of laravel to seek a career as a developer in future. Further I'll create more laravel projects in future just only to improve my skills and fun.</p>
+    </section>
+    <section>
         <h2>Customer Interaction</h2>
         <p>Effective customer interaction is crucial for successful product sell and rental service management. This includes providing excellent customer service, addressing customer inquiries and concerns, and ensuring a seamless experience throughout the sales or rental process.</p>
     </section>

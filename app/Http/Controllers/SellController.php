@@ -72,4 +72,28 @@ class SellController extends Controller
         // Redirect with success message if data is validated
         return redirect()->route('sells.index')->with('success', 'Purchase added successfully.');
     }
+
+    public function update($id){
+        $purchase = Purchase::find($id);
+        
+        return view('sells.update-due', compact('purchase'));
+    }
+
+    public function updateDue(Request $request, $id)
+    {
+        $request->validate([
+            'newPayment' => 'required|numeric',
+        ]);
+
+        $purchase = Purchase::findOrFail($id);
+        if ($purchase->amountDue < $request->input('newPayment')) {
+            return redirect()->route('sells.index')->with('error', 'Amount paid is more than the amount due.');
+        }
+
+        $purchase->amountDue -= $request->input('newPayment');
+        $purchase->payAmount += $request->input('newPayment');
+        $purchase->save();
+
+        return redirect()->route('sells.index')->with('success', 'Amount due updated successfully.');
+    }
 }

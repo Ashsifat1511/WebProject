@@ -64,6 +64,7 @@
                     <th>Paid</th>
                     <th>Amount Due</th>
                     <th>Processed By</th>
+                    <th>Update Due</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,6 +79,7 @@
                     <td>{{ $rental->paid }}</td>
                     <td>{{ $rental->amountDue }}</td>
                     <td>{{ $rental->User_username }}</td>
+                    <td><a href="{{ route('rentals.update-due', $rental->rentalID) }}">Update Due</a></td>
                 </tr>
                 @endforeach
             </tbody>

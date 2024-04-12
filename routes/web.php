@@ -43,12 +43,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/sells', [SellController::class, 'index'])->name('sells.index');
     Route::get('/sells/create', [SellController::class, 'create'])->name('sells.create');
     Route::post('/sells', [SellController::class, 'store'])->name('sells.store');
+    Route::get('/sells/{id}/update-due', [SellController::class, 'update'])->name('sells.update-due');
+    Route::put('/sells/{id}', [SellController::class, 'updateDue'])->name('sells.update-due.post');
 
 
     //all routes for rentals
     Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
     Route::get('/rentals/create', [RentalController::class, 'create'])->name('rentals.create');
     Route::post('/rentals', [RentalController::class, 'store'])->name('rentals.store');
+    Route::get('/rentals/{id}/update-due', [RentalController::class, 'update'])->name('rentals.update-due');
+    Route::put('/rentals/{id}', [RentalController::class, 'updateDue'])->name('rentals.update-due.post');
 
 
     //all routes for accounts

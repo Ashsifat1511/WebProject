@@ -72,4 +72,30 @@ class RentalController extends Controller
 
         return redirect()->route('rentals.index')->with('success', 'Rental added successfully.');
     }
+
+    public function update($id)
+    {
+        $rental = Rental::find($id);
+
+        return view('rentals.update-due', compact('rental'));
+    }
+
+    public function updateDue(Request $request, $id)
+    {
+        $request->validate([
+            'newPayment' => 'required|numeric',
+        ]);
+
+        $rental = Rental::findOrFail($id);
+
+        if($rental->amountDue < $request->input('newPayment')){
+            return redirect()->route('rentals.index')->with('error', 'Payment is more than the amount due.');
+        }
+
+        $rental->amountDue -= $request->input('newPayment');
+        $rental->paid += $request->input('newPayment');
+        $rental->save();
+
+        return redirect()->route('rentals.index')->with('success', 'Payment updated successfully.');
+    }
 }
