@@ -18,11 +18,11 @@ class AuthManager extends Controller
 
     function loginPost(Request $request){
         $request->validate([
-            'email' => 'required|email',
+            'username' => 'required|exists:users,username',
             'password' => 'required'
         ]);
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials)) {
             return redirect()->route('dashboard');
