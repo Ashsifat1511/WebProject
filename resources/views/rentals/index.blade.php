@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rentals</title>
-    <link rel="stylesheet" href="css/rental.css">
+    <link rel="stylesheet" href="css/rental/rental.css">
 </head>
 
 <body>
-    <div class="sidebar">
+<div class="sidebar">
         <h2>Menu</h2>
         <div class="menu">
             <ul>
@@ -25,7 +25,9 @@
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
-        <div><h3>Current time:</h3></div>
+        <div>
+            <h3>Current time:</h3>
+        </div>
         <div id="clock" class="clock"></div>
         <div class="current-user">
             <ul>
@@ -36,7 +38,7 @@
     </div>
 
     <div class="content">
-        <div>
+        <div class="success">
             @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -48,11 +50,20 @@
             </div>
             @endif
         </div>
-        <h1>Rental Management</h1>
-
-        <a href="{{ route('rentals.create') }}">New Rental Add</a>
-
-        <table>
+        <div class="header">
+            <div class="headerimg"><img src="icons/rent.png" alt="logo"></div>
+            <div class="headercontent">
+                <h2>Rent Management</h2>
+            </div>
+        </div>
+        <hr class="divide" />
+        <div class="main">
+           <div class="add">
+                <h4>Add New Rent: </h4>
+                <a href="{{ route('rentals.create') }}"><img src="icons/add.png"></a>
+            </div>
+            <div class="showitem">
+            <table>
             <thead>
                 <tr>
                     <th>Rental ID</th>
@@ -79,11 +90,13 @@
                     <td>{{ $rental->paid }}</td>
                     <td>{{ $rental->amountDue }}</td>
                     <td>{{ $rental->User_username }}</td>
-                    <td><a href="{{ route('rentals.update-due', $rental->rentalID) }}">Update Due</a></td>
+                    <td><a href="{{ route('rentals.update-due', $rental->rentalID) }}"><img src="icons/update.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
+            </div>
+        </div>
     </div>
     <script src="js/clock.js"></script>
 </body>
