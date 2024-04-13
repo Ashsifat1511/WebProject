@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Items</title>
-    <link rel="stylesheet" href="css/customer.css">
+    <link rel="stylesheet" href="css/item/item.css">
 </head>
 
 <body>
@@ -25,7 +25,9 @@
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
-        <div><h3>Current time:</h3></div>
+        <div>
+            <h3>Current time:</h3>
+        </div>
         <div id="clock" class="clock"></div>
         <div class="current-user">
             <ul>
@@ -36,7 +38,7 @@
     </div>
 
     <div class="content">
-        <div>
+        <div class="success">
             @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -48,52 +50,64 @@
             </div>
             @endif
         </div>
-        <h1>Items Management</h1>
-
-        <form action="{{ route('items.search') }}" method="GET">
-            <input type="text" name="query" placeholder="Search by name...">
-            <button type="submit">Search</button>
-        </form>
-
-        <a href="{{ route('items.create') }}">Add New Item</a>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Stock</th>
-                    <th>Rental/Sale</th>
-                    <th>Sale Price</th>
-                    <th>Rent Rate</th>
-                    <th>Photo</th>
-                    <th>Item Type</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($items as $item)
-                <tr>
-                    <td>{{ $item->itemID }}</td>
-                    <td>{{ $item->itemName }}</td>
-                    <td>{{ $item->stock }}</td>
-                    <td>{{ $item->rentalOrSale }}</td>
-                    <td>{{ $item->salePrice }}</td>
-                    <td>{{ $item->rentRate }}</td>
-                    <td>{{ $item->photo }}</td>
-                    <td>{{ $item->itemType }}</td>
-                    <td>
-                        <a href="{{ route('items.edit', $item->itemID) }}">Edit</a>
-                        <form action="{{ route('items.destroy', $item->itemID) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="header">
+            <div class="headerimg"><img src="icons/trolley.png" alt="logo"></div>
+            <div class="headercontent">
+                <h2>Item Management</h2>
+            </div>
+        </div>
+        <hr class="divide" />
+        <div class="main">
+            <div class="search">
+                <form action="{{ route('items.search') }}" method="GET">
+                    <input type="text" name="query" placeholder="Search by name...">
+                    <button type="submit"><img src="icons/search.png"></button>
+                </form>
+            </div>
+            <div class="add">
+                <h4>Add New Item: </h4>
+                <a href="{{ route('items.create') }}"><img src="icons/add.png"></a>
+            </div>
+            <div class="showitem">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Stock</th>
+                            <th>Rental/Sale</th>
+                            <th>Sale Price</th>
+                            <th>Rent Rate</th>
+                            <th>Photo</th>
+                            <th>Item Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($items as $item)
+                        <tr>
+                            <td>{{ $item->itemID }}</td>
+                            <td>{{ $item->itemName }}</td>
+                            <td>{{ $item->stock }}</td>
+                            <td>{{ $item->rentalOrSale }}</td>
+                            <td>{{ $item->salePrice }}</td>
+                            <td>{{ $item->rentRate }}</td>
+                            <td>{{ $item->photo }}</td>
+                            <td>{{ $item->itemType }}</td>
+                            <td>
+                                <a href="{{ route('items.edit', $item->itemID) }}"><img src="icons/edit.png"></a>
+                                <form action="{{ route('items.destroy', $item->itemID) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><img src="icons/delete.png"></button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script src="js/clock.js"></script>
 </body>
