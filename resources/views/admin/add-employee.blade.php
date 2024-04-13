@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
-    <link rel="stylesheet" href="css/add.css">
+    <link rel="stylesheet" href="{{asset('css/admin/add.css')}}">
 </head>
 
 <body>
@@ -14,30 +14,20 @@
         <h1>Access Denied</h1>
         @endif
         @if(auth()->user()->role === 'Admin')
-        <div class="mt-5">
-            @if ($errors->any())
-            <div class="col-12">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger"> {{ $error }} </div>
-                    @endforeach
-                </ul>
+        <div class="content">
+        <div class="success">
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+            @if (session('error'))
+            <div class="alert alert-error">
+                {{ session('error') }}
             </div>
             @endif
         </div>
-
-        @if (session()->has('error'))
-        <div class="alert alert-danger">
-            {{ session('error') }}
-        </div>
-        @endif
-
-        @if (session()->has('success'))
-        <div class="alert alert-danger">
-            {{ session('success') }}
-        </div>
-        @endif
-
+        <div class="item">
         <form action="{{route('admin.add-employee.post')}}" method="POST" class="ms-auto me-auto mt-3" style="width: 500px">
             @csrf
             <div class="mb-3">
@@ -65,6 +55,8 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        </div>
+    </div>
         @endif
     </div>
 </body>

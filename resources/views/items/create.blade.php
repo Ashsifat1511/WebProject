@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Item</title>
-    <link rel="stylesheet" type="text/css" href="css/item/itemtable.css">
+    <link rel="stylesheet" type="text/css" href="/css/item/itemtable.css">
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                         <option value="5">Others</option>
                     </select>
                 </div>
-                <button type="submit"><img src="icons/add.png"></button>
+                <button type="submit">Add Customer</button>
             </form>
         </div>
     </div>

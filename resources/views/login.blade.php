@@ -1,44 +1,48 @@
-@extends('layout')
-@section('title','login')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{asset('css/login.css')}}">
+</head>
+<body>
+    <div class="login-container">
 
-@section('content')
-    <div class="container">
-
-        <div class="mt-5">
+        <div>
             @if ($errors->any())
-                <div class="col-12">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <div class="alert alert-danger"> {{ $error }} </div>
-                        @endforeach
-                    </ul>
+                <div>
+                    @foreach ($errors->all() as $error)
+                        <div class="alert"> {{ $error }} </div>
+                    @endforeach
                 </div>
             @endif
         </div>
 
         @if (session()->has('error'))
-            <div class="alert alert-danger">
+            <div class="alert">
                 {{ session('error') }}
             </div>
         @endif
 
         @if (session()->has('success'))
-            <div class="alert alert-danger">
+            <div class="alert">
                 {{ session('success') }}
             </div>
         @endif
 
-        <form action="{{route('login.post')}}" method="POST" class="ms-auto me-auto mt-3" style="width: 500px">
+        <form action="{{route('login.post')}}" method="POST">
             @csrf
-            <div class="mb-3">
-              <label class="form-label">Username</label>
+            <div class="form-group">
+                <label class="form-label">Username</label>
                 <input type="text" class="form-control" name="username">
             </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
+            <div class="form-group">
+                <label class="form-label">Password</label>
                 <input type="password" class="form-control" name="password">
             </div>
-            <button type="submit" class="btn btn-primary">Log in</button>
-          </form>
+            <button type="submit" class="form-button">Log in</button>
+        </form>
     </div>
-@endsection
+</body>
+</html>

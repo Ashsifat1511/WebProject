@@ -1,46 +1,106 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    width: 200px;  /* Standardized width */
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Allows scrolling */
+    padding-top: 20px;
+}
+
+.sidebar h2, .sidebar h3 {
+    text-align: center;
+    font-size: 20px; /* Adjusted for better visibility */
+    font-weight: bold; /* Clearer and more authoritative */
+    margin-bottom: 20px; /* Spacing for separation */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #ecf0f1;
+    display: block;
+    padding: 10px;
+    font-size: 16px; /* Reduced for standardization */
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #16a085; /* A fresher, modern color */
+    color: #fff;
 }
 
 .content {
-    max-width: 800px;
-    margin: 20px auto;
+    margin-left: 200px; /* Adjusted to match the sidebar width */
     padding: 20px;
-    background-color: #fff;
+    background: #fff; /* Added a background color for content contrast */
+    min-height: 100vh; /* Ensures full vertical coverage */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Align items with space between them */
+    align-items: center; /* Align items vertically */
+}
+
+.headerimg {
+    /* Align to the right */
+    margin-left: auto; /* Pushes .headerimg to the right */
+}
+
+.headercontent {
+    flex: 1;
+}
+
+.headerimg img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap; /* Enables responsiveness */
+    gap: 20px; /* Adds space between flex items */
+}
+
+.button {
+    background-color: #3498db; /* Vivid, attractive blue */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+.button:hover {
+    background-color: #2980b9; /* A slightly darker blue for hover effect */
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.button a {
+    color: inherit; /* Ensures link color matches button text */
+    text-decoration: none; /* Removes underline */
 }
 
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #f2f2f2;
-    color: #333;
-    text-transform: uppercase;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f2f2f2;
+.emplyee-management, .Report {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ecf0f1; /* Light background for sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrative</title>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="{{asset('css/admin/adminroute.css')}}">
 </head>
 
 <body>
@@ -43,7 +43,10 @@
         <h1>Access Denied</h1>
         @endif
         @if (auth()->user()->role === 'Admin')
-        <h1>Administrative</h1>
+        <div class="header">
+            <div class ="headerimg"><img src="icons/admin.png" alt="logo"></div>
+            <div class ="headercontent"><h2>Administrative</h2></div>
+        </div>
         <br>
         <div class="Report">
             <h1>Report</h1>

@@ -4,7 +4,7 @@
 }
 
 .success {
-    margin: 20px; /* Adjust margin as needed */
+    margin: 20px;
 }
 
 .alert {
@@ -27,53 +27,84 @@
 }
 
 .item {
-    background-color: #f9f9f9; /* Light background for the form area */
-    padding: 20px; /* Padding around the form content */
-    margin: 20px auto; /* Centering the form with margin auto and some space from top and bottom */
-    width: 80%; /* Control the width of the form */
-    border-radius: 8px; /* Rounded corners for the form container */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for some depth */
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .item form {
-    display: grid; /* Using grid layout for form rows */
-    grid-template-columns: 1fr 2fr; /* Two columns: 1 for labels and 2 for inputs */
-    gap: 10px; /* Space between grid items */
-    align-items: center; /* Align items vertically in the center */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    align-items: center;
 }
 
 .item label {
-    font-weight: bold; /* Makes labels bold */
-    padding-right: 10px; /* Right padding for spacing between label and input */
+    font-weight: bold;
+    padding-right: 10px;
 }
 
 .item input[type="text"],
 .item input[type="file"],
 .item select {
-    width: 100%; /* Full width within grid column */
-    padding: 8px; /* Padding inside the input for better readability */
-    border: 1px solid #ccc; /* Border for inputs */
-    border-radius: 4px; /* Rounded corners for inputs */
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 .item button {
-    grid-column: span 2; /* Button spans across both columns */
-    padding: 10px; /* Padding inside button */
-    background-color: #4CAF50; /* Green background for the button */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin-top: 20px; /* Top margin for spacing from last input */
-    transition: background-color 0.3s; /* Transition for hover effect */
-    display: flex; /* Use flex to align the image inside the button */
-    align-items: center; /* Center the image vertically */
-    justify-content: center; /* Center the image horizontally */
+    grid-column: span 2;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .item button img {
-    height: 20px; /* Adjust image size inside the button */
-    width: auto; /* Maintain image aspect ratio */
+    height: 20px;
+    width: auto;
+}
+
+.item-table {
+    width: 80%;
+    margin: 20px auto; /* Center the table horizontally and give some margin from the top */
+    border-collapse: collapse; /* Collapse borders */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent with the form */
+}
+
+.item-table th, .item-table td {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 8px; /* Padding inside table cells */
+    text-align: left; /* Align text to the left in cells */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.item-table th {
+    background-color: #4CAF50; /* Green background for header */
+    color: white; /* White text for header */
+}
+
+.item-table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.item-table tr:hover {
+    background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+.item-table td {
+    text-align: center; /* Center text in table cells */
 }
 
 .item-table button:hover {
