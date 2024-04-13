@@ -4,7 +4,7 @@ function updateClock() {
     var now = new Date();
 
     // Extract hours, minutes, and seconds
-    var hours = now.getHours();
+    var hours = now.getHours(); // Get the hours in 24-hour format
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
 

@@ -22,7 +22,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     //all routes for items
     Route::get('/items', [ItemController::class, 'index'])->name('items.index');
-    Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');
+    //Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');
+    //Route::post('/items/search', [ItemController::class, 'search'])->name('items.search');
+    Route::match(['get', 'post'], '/items/search', [ItemController::class, 'search'])->name('items.search');
     Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
     Route::post('/items', [ItemController::class, 'store'])->name('items.store');
     Route::get('/items/{id}/edit', [ItemController::class, 'edit'])->name('items.edit');

@@ -1,0 +1,85 @@
+/* Basic resets and background */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Styling the login container */
+.login-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Form group styling for layout and spacing */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Label styling for better readability */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Input fields styling */
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #a777e3;
+    outline: none;
+}
+
+/* Button styling */
+.form-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #6e8efb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #5a67d8;
+}
+
+/* Alert box styling for error and success messages */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Adjust the success alert color scheme */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}

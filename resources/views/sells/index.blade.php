@@ -58,7 +58,7 @@
         </div>
         <hr class="divide" />
         <div class="main">
-           <div class="add">
+            <div class="add">
                 <h4>Add New Purchase: </h4>
                 <a href="{{ route('sells.create') }}"><img src="icons/add.png"></a>
             </div>
