@@ -9,9 +9,14 @@
 </head>
 
 <body>
-    <header>
-        <h1>Product Sell and Rental Service Management</h1>
-    </header>
+    <div class = "header">
+        <div class="header-title">
+            <h1>Product Sell and Rental Service Management</h1>
+        </div>
+        <div class="header-links">
+            <a href="/login">Login</a>
+        </div>
+    </div>
     <section>
         <h2>Overview</h2>
         <p>Product sell and rental service management involves the administration and oversight of transactions related to the sale and rental of products or services. This encompasses various aspects, including inventory management, customer interaction, billing, and tracking of sales and rentals.</p>
