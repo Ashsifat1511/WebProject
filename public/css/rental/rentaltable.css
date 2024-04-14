@@ -110,3 +110,36 @@
 .item-table button:hover {
     background-color: #45a049; /* Darker green when hovered */
 }
+
+@media (max-width: 768px) {
+    .item, .item-table {
+        width: 95%; /* Wider on smaller screens for better use of space */
+    }
+
+    .item form {
+        grid-template-columns: 1fr; /* Stack inputs vertically on smaller screens */
+    }
+
+    .item button {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .alert, .success, .item, .item-table {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .item input[type="text"], .item input[type="file"], .item select {
+        padding: 6px; /* Smaller padding for smaller screens */
+    }
+
+    .item button {
+        padding: 8px; /* Smaller button padding */
+    }
+
+    .item-table th, .item-table td {
+        padding: 6px; /* Smaller cell padding */
+    }
+}

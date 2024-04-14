@@ -57,12 +57,7 @@ body {
 }
 
 .headerimg {
-    /* Align to the right */
     margin-left: auto; /* Pushes .headerimg to the right */
-}
-
-.headercontent {
-    flex: 1;
 }
 
 .headerimg img {
@@ -103,4 +98,41 @@ body {
     background-color: #ecf0f1; /* Light background for sections */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 150px; /* Reduced width for smaller devices */
+    }
+
+    .sidebar a, .sidebar h2, .sidebar h3 {
+        font-size: 14px; /* Smaller font size for compact display */
+    }
+
+    .content {
+        margin-left: 150px; /* Adjusted margin to match the sidebar width */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100px; /* Further reduced for very small screens */
+    }
+
+    .sidebar a, .sidebar h2, .sidebar h3 {
+        font-size: 12px; /* Even smaller font size for tiny displays */
+    }
+
+    .content {
+        margin-left: 100px; /* Adjusted margin to match the new sidebar width */
+    }
+
+    .header, .main {
+        flex-direction: column; /* Stacks elements vertically on very small screens */
+    }
+
+    .button, .emplyee-management, .Report {
+        padding: 8px; /* Smaller padding */
+    }
 }

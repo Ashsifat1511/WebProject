@@ -78,35 +78,69 @@
 
 .item-table {
     width: 80%;
-    margin: 20px auto; /* Center the table horizontally and give some margin from the top */
-    border-collapse: collapse; /* Collapse borders */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Consistent with the form */
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .item-table th, .item-table td {
-    border: 1px solid #ccc; /* Light grey border */
-    padding: 8px; /* Padding inside table cells */
-    text-align: left; /* Align text to the left in cells */
-    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    border-radius: 4px;
 }
 
 .item-table th {
-    background-color: #4CAF50; /* Green background for header */
-    color: white; /* White text for header */
+    background-color: #4CAF50;
+    color: white;
 }
 
 .item-table tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Alternating row colors */
+    background-color: #f9f9f9;
 }
 
 .item-table tr:hover {
-    background-color: #f1f1f1; /* Hover effect for rows */
+    background-color: #f1f1f1;
 }
 
 .item-table td {
-    text-align: center; /* Center text in table cells */
+    text-align: center;
 }
 
 .item-table button:hover {
-    background-color: #45a049; /* Darker green when hovered */
+    background-color: #45a049;
+}
+
+/* Media Queries for responsive adjustments */
+@media (max-width: 768px) {
+    .item, .item-table {
+        width: 95%; /* Wider on smaller screens for better use of space */
+    }
+
+    .item form {
+        grid-template-columns: 1fr; /* Stack inputs vertically on smaller screens */
+    }
+
+    .item button {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .alert, .success, .item, .item-table {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .item input[type="text"], .item input[type="file"], .item select {
+        padding: 6px; /* Smaller padding for smaller screens */
+    }
+
+    .item button {
+        padding: 8px; /* Smaller button padding */
+    }
+
+    .item-table th, .item-table td {
+        padding: 6px; /* Smaller cell padding */
+    }
 }

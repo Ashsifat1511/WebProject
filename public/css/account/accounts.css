@@ -17,19 +17,18 @@ body {
     padding-top: 20px;
 }
 
-.sidebar h2{
+.sidebar h2, .sidebar h3 {
     text-align: center;
-    font-size: 24px;
     font-weight: 600;
     font-style: italic;
-
 }
 
-.sidebar h3{
-    text-align: center;
+.sidebar h2 {
+    font-size: 24px;
+}
+
+.sidebar h3 {
     font-size: 18px;
-    font-weight: 600;
-    font-style: italic;
 }
 
 .sidebar ul {
@@ -37,7 +36,8 @@ body {
     padding: 0;
     margin: 0;
 }
-.sidebar  a {
+
+.sidebar a {
     text-decoration: none;
     color: #fff;
     display: block;
@@ -47,26 +47,9 @@ body {
     font-style: italic;
 }
 
-.sidebar a:hover {
+.sidebar a:hover, .sidebar a.active {
     background-color: #fff;
     color: #333;
-}
-
-.sidebar a.active {
-    background-color: #fff;
-    color: #333;
-}
-
- .clock{
-    text-align: center;
-    font-size: 18px;
-    font-style:normal;
-}
-
- .current-user{
-    text-align:left;
-    font-size: 16px;
-    padding-top: 10px;
 }
 
 .content {
@@ -76,41 +59,10 @@ body {
     width: 85%;
 }
 
-.success {
-    margin: 20px; /* Adjust margin as needed */
-}
-
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-
-.alert-success {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
-}
-
-.alert-error {
-    color: #a94442;
-    background-color: #f2dede;
-    border-color: #ebccd1;
-}
 .header {
     display: flex;
-    justify-content: space-between; /* Align items with space between them */
-    align-items: center; /* Align items vertically */
-}
-
-.headerimg {
-    /* Align to the right */
-    margin-left: auto; /* Pushes .headerimg to the right */
-}
-
-.headercontent {
-    flex: 1;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .headerimg img {
@@ -118,110 +70,83 @@ body {
     height: 50px;
     border-radius: 50%;
 }
-.divide {
-    display: none;
-    width: 100%;
-    opacity: 0.5;
-    background-color: rgb(181, 181, 181);
+
+.alert, .alert-success, .alert-error {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.search {
-    margin-bottom: 20px; /* Adjust margin as needed */
-}
-
-.search form {
-    display: flex;
-    align-items: center; /* Align items vertically */
-}
-
-.search input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px; /* Adjust width as needed */
-}
-
-.search button {
-    background-color: #f4f4f4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px; /* Adjust margin as needed */
-}
-
-.search button img {
-    width: 20px;
-    height: 20px;
-}
-.add {
-    display: flex;
-    align-items: center; 
-}
-
-.add h4 {
-    margin-right: 10px;
-}
-
-.add img {
-    width: 24px; 
-    height: 24px;
-}
-
-.showitem {
+.search, .add, .showitem {
     margin: 20px;
-    overflow-x: auto; /* Enables horizontal scrolling if table width exceeds the container width */
+}
+
+.search form, .add {
+    display: flex;
+    align-items: center;
 }
 
 .showitem table {
-    width: 100%; /* Full width to fill the container */
-    border-collapse: collapse; /* Collapses border to avoid double border where cells touch */
-    background-color: #fff; /* White background for readability */
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
 }
 
 .showitem th, .showitem td {
-    text-align: left; /* Align text to the left within cells */
-    padding: 12px 15px; /* Padding inside the cells */
-    border-bottom: 1px solid #ddd; /* Light grey border for each row */
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
 }
 
 .showitem th {
-    background-color: #333; /* Dark background for header */
-    color: white; /* White text color for header */
+    background-color: #333;
+    color: white;
     font-weight: bold;
 }
 
-.showitem td {
-    color: #333; /* Dark text color for cells */
-}
-
 .showitem tr:nth-child(even) {
-    background-color: #f2f2f2; /* Zebra striping for rows */
+    background-color: #f2f2f2;
 }
 
 .showitem tr:hover {
-    background-color: #ddd; /* Light grey background on row hover for better interactivity */
+    background-color: #ddd;
 }
 
-.showitem a, .showitem button {
-    display: inline-block; /* Ensures links and buttons are correctly aligned and appear inline */
-    vertical-align: middle; /* Aligns elements vertically in the middle */
-    margin-right: 5px; /* Adds a small margin to the right for spacing between edit and delete buttons */
+/* Media Queries for responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .headerimg img {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-.showitem button {
-    border: none; /* Removes the border from buttons */
-    background: none; /* Removes any background color from buttons */
-    cursor: pointer; /* Changes the cursor to a pointer when hovered over the button */
-}
+@media (max-width: 480px) {
+    .sidebar h2, .sidebar h3 {
+        font-size: 20px;
+    }
 
-.showitem img {
-    width: 24px; /* Standard size for action icons */
-    height: 24px;
-}
+    .sidebar a {
+        font-size: 16px;
+    }
 
-.showitem form {
-    display: inline; /* Keeps the form inline */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
+    .header {
+        flex-direction: column;
+    }
+
+    .showitem table, .showitem th, .showitem td {
+        font-size: smaller; /* Reduce font size to fit the table in small screens */
+    }
 }

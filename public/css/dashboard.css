@@ -17,19 +17,18 @@ body {
     padding-top: 20px;
 }
 
-.sidebar h2{
+.sidebar h2, .sidebar h3 {
     text-align: center;
-    font-size: 24px;
     font-weight: 600;
     font-style: italic;
-
 }
 
-.sidebar h3{
-    text-align: center;
+.sidebar h2 {
+    font-size: 24px;
+}
+
+.sidebar h3 {
     font-size: 18px;
-    font-weight: 600;
-    font-style: italic;
 }
 
 .sidebar ul {
@@ -37,7 +36,8 @@ body {
     padding: 0;
     margin: 0;
 }
-.sidebar  a {
+
+.sidebar a {
     text-decoration: none;
     color: #fff;
     display: block;
@@ -47,46 +47,34 @@ body {
     font-style: italic;
 }
 
-.sidebar a:hover {
+.sidebar a:hover, .sidebar a.active {
     background-color: #fff;
     color: #333;
 }
 
-.sidebar a.active {
-    background-color: #fff;
-    color: #333;
-}
-
-.sidebar .clock{
+.sidebar .clock, .sidebar .current-user {
     text-align: center;
     font-size: 18px;
-    font-style:normal;
+    font-style: normal;
 }
 
-.sidebar .current-user{
-    text-align:left;
+.sidebar .current-user {
+    text-align: left;
     font-size: 16px;
     padding-top: 10px;
 }
+
 .content {
     position: relative;
     margin-left: 250px;
     padding: 0px;
     width: 85%;
 }
+
 .header {
     display: flex;
-    justify-content: space-between; /* Align items with space between them */
-    align-items: center; /* Align items vertically */
-}
-
-.headerimg {
-    /* Align to the right */
-    margin-left: auto; /* Pushes .headerimg to the right */
-}
-
-.headercontent {
-    flex: 1;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .headerimg img {
@@ -94,57 +82,93 @@ body {
     height: 50px;
     border-radius: 50%;
 }
-.main{
+
+.main, .today, .summary, .overview {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    padding: 100;
 }
 
-.today{
-    font-size: 24px;
+.today, .summary {
     padding: 100px;
-    display: flex;
-    flex: 0;
-    
 }
-.circle{
+
+.circle {
     margin-left: 100px;
     height: 200px;
     width: 200px;
     border-radius: 200px;
     background-color: #f4f4f4;
     border: 1px solid #333;
-    translate: -50%;
 }
-.circle h3{
+
+.circle h3 {
     text-align: center;
     padding-top: 50px;
     font-size: 18px;
 }
+
 .divide {
     display: none;
     width: 100%;
     opacity: 0.5;
     background-color: rgb(181, 181, 181);
-  }
+}
 
-.overview{
-    display: flex;
+.overview {
     flex-direction: column;
-    margin-top: 20px;
     padding: 10px;
     flex: 1;
     border-left: 1px solid #333;
 }
 
-.summary{
-    justify-content: space-between;
-    margin-top: 20px;
-    padding: 100;
-}
-
-.overview h2{
+.overview h2 {
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .main, .today, .summary, .overview {
+        flex-direction: column;
+    }
+    .circle {
+        margin: 20px auto;
+        translate: 0;
+    }
+    .headerimg img {
+        width: 40px;
+        height: 40px;
+    }
+    .sidebar a {
+        font-size: 16px;
+    }
+    .overview, .divide {
+        border: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar h2, .sidebar h3 {
+        font-size: 20px;
+    }
+    .sidebar a {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .sidebar .clock, .sidebar .current-user {
+        font-size: 14px;
+    }
+    .circle h3 {
+        font-size: 16px;
+    }
 }

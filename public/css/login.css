@@ -83,3 +83,34 @@ body {
     background-color: #d4edda;
     color: #155724;
 }
+
+/* Media Queries for responsive adjustments */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .form-control, .form-button {
+        padding: 0.6rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .form-label {
+        font-size: 0.8rem;
+    }
+
+    .form-button {
+        padding: 0.8rem;
+    }
+}
