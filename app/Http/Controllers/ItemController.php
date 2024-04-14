@@ -19,7 +19,7 @@ class ItemController extends Controller
         $items = Item::where('itemName', 'LIKE', "%$query%")
                             ->orWhere('stock', 'LIKE', "%$query%")
                             ->get();
-        return view('items.index', compact('items'));
+        return view('items.search', compact('items'));
     }
 
     public function create()

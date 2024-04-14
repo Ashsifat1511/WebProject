@@ -19,7 +19,8 @@ class CustomerController extends Controller
         $customers = Customer::where('first_name', 'LIKE', "%$query%")
             ->orWhere('last_name', 'LIKE', "%$query%")
             ->get();
-        return view('customer.index', compact('customers'));
+        //return the search view with the results compacted to the view and css also
+        return view('customer.search', compact('customers'));
     }
 
     public function create()

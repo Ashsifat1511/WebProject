@@ -20,7 +20,7 @@ class AccountController extends Controller
         $accounts = Account::where('accountName', 'LIKE', "%$query%")
                             ->orWhere('accountDetails', 'LIKE', "%$query%")
                             ->get();
-        return view('accounts.index', compact('accounts'));
+        return view('accounts.search', compact('accounts'));
     }
     public function create()
     {

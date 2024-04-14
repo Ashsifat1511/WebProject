@@ -4,19 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Accounts</title>
-    <link rel="stylesheet" href="css/accountsearch.css">
+    <link rel="stylesheet" href="{{asset('css/account/accountsearch.css')}}">
 </head>
 <body>
-    <h1>Search Accounts</h1>
-
-    <form action="{{ route('accounts.search') }}" method="GET">
-        <div>
-            <label for="query">Search by name, address, phone, or email:</label>
-            <input type="text" id="query" name="query" value="{{ request()->input('query') }}">
-        </div>
-        <button type="submit">Search</button>
-    </form>
-
+    <a href="{{ route('accounts.index') }}">Back to Account</a>
     @if($accounts->count() > 0)
         <h2>Search Results:</h2>
         <table>
@@ -33,7 +24,7 @@
             <tbody>
                 @foreach ($accounts as $account)
                     <tr>
-                        <td>{{ $account->id }}</td>
+                        <td>{{ $account->accountID }}</td>
                         <td>{{ $account->accountName }}</td>
                         <td>{{ $account->accountDetails }}</td>
                         <td>{{ $account->Customers_customerID }}</td>
