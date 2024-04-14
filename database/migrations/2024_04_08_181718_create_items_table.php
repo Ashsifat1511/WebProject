@@ -18,7 +18,7 @@ return new class extends Migration
             $table->enum('rentalOrSale', ['Rental', 'Sale']);
             $table->double('salePrice')->nullable();
             $table->double('rentRate')->nullable();
-            $table->string('photo')->nullable();
+            $table->mediumText('photo')->nullable();
             $table->enum('itemType', ['Electronics', 'Gaming', 'Furniture', 'Books', 'Others']);
             $table->timestamps();
         });

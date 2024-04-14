@@ -42,7 +42,7 @@ class RentalSeeder extends Seeder
                 'amountDue' => 0,
                 'User_username' => 'sifatashrarul09',
                 'Item_itemID' => 2,
-                'Customers_customerID' => 3,
+                'Customers_customerID' => 2,
             ],
         ];
 

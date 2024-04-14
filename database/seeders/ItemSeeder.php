@@ -17,24 +17,24 @@ class ItemSeeder extends Seeder
         // Define the data for items
         $items = [
             [
-                'itemName' => 'Item 1',
+                'itemName' => 'Car',
                 'stock' => 10,
                 'rentalOrSale' => 'Rental',
                 'salePrice' => 0.00, // Assuming 'Item 1' is not for sale
                 'rentRate' => 500.00,
-                'photo' => 'item1.jpg', // Assuming the photo is stored in 'public/storage/item1.jpg'
-                'itemType' => 'Electronics',
+                'photo' => 'car.jpg', // Assuming the photo is stored in 'public/storage/item1.jpg'
+                'itemType' => 'Others',
                 'created_at' => '2021-01-01 00:00:00',
                 'updated_at' => '2021-01-01 00:00:00',
             ],
             [
-                'itemName' => 'Item 2',
+                'itemName' => 'Computer',
                 'stock' => 10,
                 'rentalOrSale' => 'Sale',
                 'salePrice' => 2000.00, // Assuming 'Item 2' is for sale
                 'rentRate' => 0.00, // Assuming no rent rate for 'Item 2'
-                'photo' => 'item2.jpg', // Assuming the photo is stored in 'public/storage/item2.jpg'
-                'itemType' => 'Gaming',
+                'photo' => 'computer.jpg', // Assuming the photo is stored in 'public/storage/item2.jpg'
+                'itemType' => 'Electronics',
                 'created_at' => '2021-01-01 00:00:00',
                 'updated_at' => '2021-01-01 00:00:00',
             ],

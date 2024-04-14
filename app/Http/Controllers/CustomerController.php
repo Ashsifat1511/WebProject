@@ -11,15 +11,14 @@ class CustomerController extends Controller
     {
         $customers = Customer::all();
         return view('customer.index', compact('customers'));
-
     }
 
     public function search(Request $request)
     {
         $query = $request->input('query');
         $customers = Customer::where('first_name', 'LIKE', "%$query%")
-                            ->orWhere('last_name', 'LIKE', "%$query%")
-                            ->get();
+            ->orWhere('last_name', 'LIKE', "%$query%")
+            ->get();
         return view('customer.index', compact('customers'));
     }
 
@@ -37,7 +36,7 @@ class CustomerController extends Controller
             'address' => 'required',
             'phone' => 'required',
             'email' => 'required|email|unique:customers',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'gender' => 'required'
         ]);
 
@@ -48,8 +47,16 @@ class CustomerController extends Controller
         $customer->address = $request->input('address');
         $customer->phone = $request->input('phone');
         $customer->email = $request->input('email');
-        $customer->photo = $request->file('photo')->store('directory');
         $customer->gender = $request->input('gender');
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            // Specify the path within the public disk
+            $path = $photo->storeAs('uploads/customers', $filename, 'public');
+            $customer->photo = $filename; // Save the full path or just the filename, as needed
+            $customer->save();
+        }
+
         $customer->save();
 
         return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
@@ -84,8 +91,10 @@ class CustomerController extends Controller
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
-            $photo->storeAs('photos', $filename);
-            $customer->photo = $filename;
+            // Specify the path within the public disk
+            $path = $photo->storeAs('uploads/customers', $filename, 'public');
+            $customer->photo = $filename; // Save the full path or just the filename, as needed
+            $customer->save();
         }
 
         $customer->save();

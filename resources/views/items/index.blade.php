@@ -92,7 +92,7 @@
                             <td>{{ $item->rentalOrSale }}</td>
                             <td>{{ $item->salePrice }}</td>
                             <td>{{ $item->rentRate }}</td>
-                            <td>{{ $item->photo }}</td>
+                            <td><img src="{{ asset('uploads/items/' . $item->photo) }}" alt="photo" style="width: 100px; height: 100px;"></td>
                             <td>{{ $item->itemType }}</td>
                             <td>
                                 <a href="{{ route('items.edit', $item->itemID) }}"><img src="icons/edit.png"></a>
