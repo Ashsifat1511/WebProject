@@ -57,7 +57,12 @@ body {
 }
 
 .headerimg {
+    /* Align to the right */
     margin-left: auto; /* Pushes .headerimg to the right */
+}
+
+.headercontent {
+    flex: 1;
 }
 
 .headerimg img {
@@ -100,8 +105,8 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 
-/* Media Queries for Responsive Adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px)
+    {
     .sidebar {
         width: 150px; /* Reduced width for smaller devices */
     }
@@ -115,7 +120,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .sidebar {
         width: 100px; /* Further reduced for very small screens */
     }

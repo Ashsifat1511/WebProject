@@ -226,7 +226,7 @@ body {
     padding: 0; /* Removes default padding */
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .sidebar {
         width: 150px; /* Smaller sidebar for tablet and smaller devices */
         padding-top: 15px;
@@ -242,7 +242,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .sidebar {
         width: 100px; /* Even smaller sidebar for mobile devices */
         padding-top: 10px;

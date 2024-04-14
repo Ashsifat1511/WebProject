@@ -74,9 +74,7 @@ footer a {
 footer a:hover {
     text-decoration: underline; /* Adds underline on hover for links */
 }
-
-/* Media Queries for Responsive Adjustments */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
         padding: 10px;
@@ -99,7 +97,7 @@ footer a:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .header {
         padding: 8px;
     }
