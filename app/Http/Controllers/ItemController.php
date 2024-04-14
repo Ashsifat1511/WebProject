@@ -36,7 +36,7 @@ class ItemController extends Controller
         'rentalOrSale' => 'required',
         'salePrice' => 'required',
         'rentRate' => 'required',
-        'photo' => 'required',
+        'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         'itemType' => 'required'
     ]);
 
@@ -47,8 +47,15 @@ class ItemController extends Controller
     $item->rentalOrSale = $validatedData['rentalOrSale'];
     $item->salePrice = $validatedData['salePrice'];
     $item->rentRate = $validatedData['rentRate'];
-    $item->photo = $request->file('photo')->store('directory');
     $item->itemType = $validatedData['itemType'];
+    if ($request->hasFile('photo')) {
+        $photo = $request->file('photo');
+        $filename = time() . '.' . $photo->getClientOriginalExtension();
+        // Specify the path within the public disk
+        $path = $photo->storeAs('uploads/items', $filename, 'public');
+        $item->photo = $filename; // Save the full path or just the filename, as needed
+        $item->save();
+    }
     $item->save();
 
     return redirect()->route('items.index')->with('success', 'Item created successfully.');
@@ -82,11 +89,12 @@ class ItemController extends Controller
         $item->salePrice = $request->input('salePrice');
         $item->rentRate = $request->input('rentRate');
         
-        // Handle photo upload
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
-            $path = $photo->store('directory');
-            $item->photo = $path;
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            $path = $photo->storeAs('uploads/items', $filename, 'public');
+            $item->photo = $filename;
+            $item->save();
         }
 
         $item->itemType = $request->input('itemType');

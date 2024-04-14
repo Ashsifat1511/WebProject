@@ -79,7 +79,7 @@
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Gender</th>
-                            <th>Member Since</th>
+                            <th>Photo</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -93,7 +93,7 @@
                             <td>{{ $customer->phone }}</td>
                             <td>{{ $customer->email }}</td>
                             <td>{{ $customer->gender}}</td>
-                            <td>{{ $customer->member_since }}</td>
+                            <td><img src="{{ asset('uploads/customers/' . $customer->photo) }}" alt="photo" style="width: 100px; height: 100px;"></td>
                             <td>
                                 <a href="{{ route('customers.edit', $customer->id) }}"><img src="icons/edit.png"></a>
                                 <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
