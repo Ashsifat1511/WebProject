@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee List</title>
-    <link rel="stylesheet" href="{{asset('css/admin/report.css')}}">
+    <link rel="stylesheet" href="{{asset('css/report.css')}}">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
             </div>
             <div class="header">
                 <div class="headercontent">
-                    <h2>Rental Report</h2>
+                    <h2>List of Employee</h2>
                 </div>
             </div>
             <hr class="divide" />

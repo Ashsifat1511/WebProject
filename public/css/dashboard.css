@@ -148,3 +148,49 @@ body {
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .main, .today, .summary, .overview {
+        flex-direction: column;
+    }
+    .circle {
+        margin: 20px auto;
+        translate: 0;
+    }
+    .headerimg img {
+        width: 40px;
+        height: 40px;
+    }
+    .sidebar a {
+        font-size: 16px;
+    }
+    .overview, .divide {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar h2, .sidebar h3 {
+        font-size: 20px;
+    }
+    .sidebar a {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .sidebar .clock, .sidebar .current-user {
+        font-size: 14px;
+    }
+    .circle h3 {
+        font-size: 16px;
+    }
+}

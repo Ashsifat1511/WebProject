@@ -225,3 +225,43 @@ body {
     margin: 0; /* Removes default margin */
     padding: 0; /* Removes default padding */
 }
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 150px; /* Smaller sidebar for tablet and smaller devices */
+        padding-top: 15px;
+    }
+
+    .content {
+        margin-left: 150px;
+        width: calc(100% - 150px);
+    }
+
+    .sidebar h2, .sidebar h3, .sidebar a {
+        font-size: 16px; /* Smaller font size for compact appearance */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 100px; /* Even smaller sidebar for mobile devices */
+        padding-top: 10px;
+    }
+
+    .content {
+        margin-left: 100px;
+        width: calc(100% - 100px);
+    }
+
+    .sidebar h2, .sidebar h3, .sidebar a {
+        font-size: 14px; /* Further reduce font size for mobile devices */
+    }
+
+    .header, .search, .add, .showitem {
+        flex-direction: column; /* Stack elements vertically on small screens */
+    }
+
+    .showitem table, .showitem th, .showitem td {
+        font-size: smaller; /* Smaller font size for better readability */
+    }
+}

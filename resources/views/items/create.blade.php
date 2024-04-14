@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Item</title>
-    <link rel="stylesheet" type="text/css" href="/css/item/itemtable.css">
+    <link rel="stylesheet" href="{{asset('css/table.css')}}">
 </head>
 
 <body>

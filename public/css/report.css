@@ -97,3 +97,30 @@ body {
     width: 24px;
     vertical-align: middle;
 }
+
+/* Media Queries for responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 20px;
+        width: calc(100% - 40px); /* Adjust width for smaller screens */
+    }
+
+    .header, .headercontent, .showitem {
+        flex-direction: column; /* Stack elements vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        margin-left: 10px;
+        width: calc(100% - 20px); /* Further adjustment for very small screens */
+    }
+
+    .showitem table, .showitem th, .showitem td {
+        padding: 8px; /* Smaller padding for tighter spaces */
+    }
+
+    .showitem th, .showitem td {
+        font-size: smaller; /* Smaller font size for better readability on small devices */
+    }
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Employee</title>
-    <link rel="stylesheet" href="{{asset('css/admin/add.css')}}">
+    <link rel="stylesheet" href="{{asset('css/table.css')}}">
 </head>
 
 <body>

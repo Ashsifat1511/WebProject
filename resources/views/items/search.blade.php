@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Items</title>
-    <link rel="stylesheet" href="{{asset('css/item/itemsearch.css')}}">
+    <link rel="stylesheet" href="{{asset('css/search.css')}}">
 </head>
 <body>
     <a href="{{ route('items.index') }}">Back to Item</a>
