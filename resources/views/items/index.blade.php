@@ -99,7 +99,7 @@
                                 <form action="{{ route('items.destroy', $item->itemID) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit"><img src="icons/delete.png"></button>
+                                    <button type="submit" onclick="return confirm('Are you sure you want to delete this item?')"><img src="icons/delete.png"></button>
                                 </form>
                             </td>
                         </tr>
