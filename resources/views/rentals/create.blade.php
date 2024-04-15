@@ -47,11 +47,19 @@
                 </div>
                 <div>
                     <label for="Item_itemID">Item:</label>
-                    <input type="text" id="Item_itemID" name="Item_itemID">
+                    <select name="Item_itemID" id="Item_itemID">
+                        @foreach ($items as $item)
+                        <option value="{{ $item->itemID }}">{{ $item->itemName }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div>
                     <label for="Customers_customerID">Customer:</label>
-                    <input type="text" id="Customers_customerID" name="Customers_customerID">
+                    <select name="Customers_customerID" id="Customers_customerID">
+                        @foreach ($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->first_name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <button type="submit">Add</button>
             </form>

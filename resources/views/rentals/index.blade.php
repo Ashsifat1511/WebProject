@@ -22,7 +22,12 @@
                 @if (auth()->user()->role === 'Admin')
                 <li><a href="/admin">Administrative</a></li>
                 @endif
-                <li><a href="/logout">Logout</a></li>
+                <li>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
             </ul>
         </div>
         <div>

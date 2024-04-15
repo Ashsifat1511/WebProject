@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use App\Models\Rental;
@@ -18,7 +19,10 @@ class RentalController extends Controller
 
     public function create()
     {
-        return view('rentals.create');
+        //get all items that are for rent
+        $items = Item::where('rentalOrSale', 'Rental')->get();
+        $customers = Customer::all();
+        return view('rentals.create',compact('items','customers'));
     }
 
     public function store(Request $request)

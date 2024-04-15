@@ -8,6 +8,8 @@ use App\Models\Rental;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+use function Symfony\Component\String\b;
+
 class AdminController extends Controller
 {
     public function index()
@@ -56,8 +58,8 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:users,username', // Check unique username from 'users' table
-            'email' => 'required|email',
+            'username' => 'required|unique:users,username', 
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'role' => 'required'
         ]);
@@ -71,7 +73,7 @@ class AdminController extends Controller
         $user = User::create($data);
 
         if (!$user) {
-            return redirect()->back()->with('error', 'Failed to register');
+            return redirect()-back()->with('error', 'Failed to add employee');
         }
         return redirect()->route('admin.employee')->with('success', 'Addition successful');
     }

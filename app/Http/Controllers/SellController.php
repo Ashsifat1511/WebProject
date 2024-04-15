@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Item;
 use App\Models\Purchase;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class SellController extends Controller
@@ -17,7 +18,10 @@ class SellController extends Controller
 
     public function create()
     {
-        return view('sells.create');
+        //select all items that are for sale
+        $items = Item::where('rentalOrSale', 'Sale')->get();
+        $customers = Customer::all();
+        return view('sells.create',compact('items','customers'));
     }
 
     public function store(Request $request)

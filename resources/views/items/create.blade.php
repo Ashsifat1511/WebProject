@@ -62,7 +62,7 @@
                         <option value="5">Others</option>
                     </select>
                 </div>
-                <button type="submit">Add Customer</button>
+                <button type="submit">Add Item</button>
             </form>
         </div>
     </div>

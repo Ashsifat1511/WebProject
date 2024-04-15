@@ -73,4 +73,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/add-employee', [AdminController::class, 'storeEmployee'])->name('admin.add-employee.post');
     Route::delete('/admin/employee/{id}', [AdminController::class, 'destroy'])->name('employees.destroy');
 });
-Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');

@@ -34,6 +34,8 @@ class AuthManager extends Controller
     function logout(){
         session()->flush();
         Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
         return redirect()->route('login');
     }
 
