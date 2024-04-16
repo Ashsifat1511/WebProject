@@ -40,6 +40,7 @@
                     <th>Paid</th>
                     <th>Amount Due</th>
                     <th>Processed By</th>
+                    <th>Return Status</th>
                     <th>Update Due</th>
                 </tr>
             </thead>
@@ -55,6 +56,13 @@
                     <td>{{ $rental->paid }}</td>
                     <td>{{ $rental->amountDue }}</td>
                     <td>{{ $rental->User_username }}</td>
+                    <td>
+                        @if ($rental->isReturned)
+                        Returned
+                        @else
+                        Not Returned
+                        @endif
+                    </td>
                     <td><a href="{{ route('rentals.update-due', $rental->rentalID) }}"><img src="icons/update.png"></a></td>
                 </tr>
                 @endforeach

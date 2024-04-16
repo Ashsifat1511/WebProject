@@ -18,6 +18,8 @@ class Rental extends Model
         'User_username',
         'Item_itemID',
         'Customers_customerID',
+        'quantity',
+        'isReturned',
     ];
 
     // Define the relationship with the User model (Many-to-One)

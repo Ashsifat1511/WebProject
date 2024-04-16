@@ -179,6 +179,22 @@ body {
     }
 }
 
+@media screen and (max-width: 600px){
+    .sidebar h2, .sidebar h3 {
+        font-size: 22px;
+    }
+    .sidebar a {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .sidebar .clock, .sidebar .current-user {
+        font-size: 16px;
+    }
+    .circle h3 {
+        font-size: 18px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .sidebar h2, .sidebar h3 {
         font-size: 20px;
@@ -193,4 +209,38 @@ body {
     .circle h3 {
         font-size: 16px;
     }
+}
+
+@media screen and (max-width: 320px) {
+    .sidebar h2, .sidebar h3 {
+        font-size: 18px;
+    }
+    .sidebar a {
+        padding: 6px;
+        font-size: 12px;
+    }
+    .sidebar .clock, .sidebar .current-user {
+        font-size: 12px;
+    }
+    .circle h3 {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width: 280px) {
+    .sidebar h2, .sidebar h3 {
+        font-size: 16px;
+    }
+    .sidebar a {
+        padding: 4px;
+        font-size: 10px;
+    }
+    .sidebar .clock, .sidebar .current-user {
+        font-size: 10px;
+    }
+    .circle h3 {
+        font-size: 12px;
+    }
+    
 }

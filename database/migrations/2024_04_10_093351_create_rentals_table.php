@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('User_username');
             $table->unsignedBigInteger('Item_itemID');
             $table->unsignedBigInteger('Customers_customerID');
+            $table->boolean('isReturned')->default(false);
             $table->timestamps();
 
             // Define foreign key constraints

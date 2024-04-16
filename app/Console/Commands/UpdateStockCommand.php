@@ -34,8 +34,10 @@ class UpdateStockCommand extends Command
         foreach ($overdueRentals as $rental) {
             $item = Item::find($rental->Item_itemID);
             if ($item) {
-                // Increment the stock by the rental quantity for the returned item
                 $item->stock += $rental->quantity;
+                $rental->isReturned = true;
+                $rental->quantity = 0;
+                $rental->save();
                 $item->save();
             }
         }
