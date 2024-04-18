@@ -31,7 +31,7 @@ class RentalSeeder extends Seeder
                 'paid' => 1000,
                 'amountDue' => 0,
                 'User_username' => 'sifatashrarul',
-                'Item_itemID' => 2,
+                'Item_itemID' => 1,
                 'Customers_customerID' => 2,
             ],
             [
@@ -41,8 +41,8 @@ class RentalSeeder extends Seeder
                 'paid' => 1000,
                 'amountDue' => 0,
                 'User_username' => 'sifatashrarul09',
-                'Item_itemID' => 2,
-                'Customers_customerID' => 2,
+                'Item_itemID' => 1,
+                'Customers_customerID' => 3,
             ],
         ];
 
