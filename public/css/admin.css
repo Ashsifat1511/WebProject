@@ -1,169 +1,104 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    display: flex;
 }
 
+/* Sidebar Styling */
 .sidebar {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    width: 200px;  
-    height: 100vh; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; 
-    padding-top: 20px;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 20px;
 }
 
 .sidebar h2, .sidebar h3 {
-    text-align: center;
-    font-size: 20px; 
-    font-weight: bold; 
-    margin-bottom: 20px; 
+    margin-top: 0;
 }
 
-.sidebar ul {
-    list-style: none;
+.menu ul {
+    list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-.sidebar a {
+.menu li a {
+    color: white;
     text-decoration: none;
-    color: #ecf0f1;
     display: block;
     padding: 10px;
-    font-size: 16px; 
+    border-bottom: 1px solid #444;
 }
 
-.sidebar a:hover, .sidebar a.active {
-    background-color: #16a085; 
-    color: #fff;
+.menu li a:hover {
+    background-color: #555;
 }
 
+/* Button in the form for logout */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c33;
+}
+
+/* Content Area Styling */
 .content {
-    margin-left: 200px; 
+    flex-grow: 1;
     padding: 20px;
-    background: #fff; /* Added a background color for content contrast */
-    min-height: 100vh; /* Ensures full vertical coverage */
+    background-color: #f4f4f4;
 }
 
 .header {
     display: flex;
-    justify-content: space-between; /* Align items with space between them */
-    align-items: center; /* Align items vertically */
-}
-
-.headerimg {
-    /* Align to the right */
-    margin-left: auto; /* Pushes .headerimg to the right */
-}
-
-.headercontent {
-    flex: 1;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .headerimg img {
-    width: 50px;
     height: 50px;
-    border-radius: 50%;
+    width: 50px;
 }
 
-.main {
-    display: flex;
-    flex-wrap: wrap; /* Enables responsiveness */
-    gap: 20px; /* Adds space between flex items */
+.headercontent h2 {
+    margin-left: 10px;
 }
 
-.button {
-    background-color: #3498db; /* Vivid, attractive blue */
-    border: none;
+.Report, .emplyee-management {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.button a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #06c;
     color: white;
-    padding: 10px 15px;
-    font-size: 14px;
-    cursor: pointer;
+    text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #2980b9; /* A slightly darker blue for hover effect */
+.button a:hover {
+    background-color: #0056b3;
 }
 
-.button a {
-    color: inherit; /* Ensures link color matches button text */
-    text-decoration: none; /* Removes underline */
+.current-user ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.emplyee-management, .Report {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #ecf0f1; /* Light background for sections */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-@media screen and (max-width: 768px)
-    {
-    .sidebar {
-        width: 150px; /* Reduced width for smaller devices */
-    }
-
-    .sidebar a, .sidebar h2, .sidebar h3 {
-        font-size: 14px; /* Smaller font size for compact display */
-    }
-
-    .content {
-        margin-left: 150px; /* Adjusted margin to match the sidebar width */
-    }
-}
-
-@media screen and (max-width: 576px)
-    {
-    .sidebar {
-        width: 100px; /* Further reduced width for mobile devices */
-    }
-
-    .sidebar a, .sidebar h2, .sidebar h3 {
-        font-size: 12px; /* Smallest font size for mobile display */
-    }
-
-    .content {
-        margin-left: 100px; /* Adjusted margin to match the sidebar width */
-    }
-    
-}
-
-@media screen and (max-width: 320px)
-    {
-    .sidebar {
-        width: 80px; /* Further reduced width for smaller mobile devices */
-    }
-
-    .sidebar a, .sidebar h2, .sidebar h3 {
-        font-size: 10px; /* Smallest font size for smallest mobile display */
-    }
-
-    .content {
-        margin-left: 80px; /* Adjusted margin to match the sidebar width */
-    }
-    
-}
-
-@media screen and (max-width: 280px)
-    {
-    .sidebar {
-        width: 60px; /* Further reduced width for smallest mobile devices */
-    }
-
-    .sidebar a, .sidebar h2, .sidebar h3 {
-        font-size: 8px; /* Smallest font size for smallest mobile display */
-    }
-
-    .content {
-        margin-left: 60px; /* Adjusted margin to match the sidebar width */
-    }
-    
+.current-user li {
+    padding: 5px 0;
+    border-top: 1px solid #444;
 }

@@ -66,6 +66,9 @@
             <button class="button"><a href="/admin/add-employee">Add Employee</a></button>
             <button class="button"><a href="/admin/show-employee">List Employee</a></button>
         </div>
+        <div class="myinfo">
+            <h1>Developed by <a href="https://ashsifat1511.github.io/MyPortfolio/">Md Ashrarul Haque Sifat</a></h1>
+        </div>
         @endif
     </div>
     <script src="js/clock.js"></script>

@@ -11,11 +11,9 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\UpdateDueController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-Route::get('/login', [AuthManager::class, 'login'])->name('login');
-Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
+
+Route::get('/', [AuthManager::class, 'login'])->name('login');
+Route::post('/', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
