@@ -29,6 +29,6 @@ class Purchase extends Model
     // Define the relationship with Customer model (Many-to-One)
     public function customer()
     {
-        return $this->belongsTo(Customer::class, 'customer_id', 'id');
+        return $this->belongsTo(Customer::class, 'Customers_customerID', 'id');
     }
 }

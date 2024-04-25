@@ -35,9 +35,9 @@
                     <th>Purchase Date</th>
                     <th>Quantity</th>
                     <th>Due</th>
-                    <th>Username</th>
-                    <th>Item ID</th>
-                    <th>Customer ID</th>
+                    <th>Sold By</th>
+                    <th>Item Name</th>
+                    <th>Customer Name</th>
                     <th>Amount Paid</th>
                     <th>Update Dues</th>
                 </tr>
@@ -50,8 +50,8 @@
                     <td>{{ $purchase->purchaseQuantity }}</td>
                     <td>{{ $purchase->amountDue }}</td>
                     <td>{{ $purchase->User_username }}</td>
-                    <td>{{ $purchase->Item_itemID }}</td>
-                    <td>{{ $purchase->Customers_customerID }}</td>
+                    <td>{{ $purchase->item->itemName }}</td>
+                    <td>{{ $purchase->customer->first_name }}</td>
                     <td>{{ $purchase->payAmount }}</td>
                     <td>
                         <a href="{{ route('sells.update-due', $purchase->purchaseID) }}"><img src="icons/update.png"></a>

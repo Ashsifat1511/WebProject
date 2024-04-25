@@ -43,8 +43,8 @@
                                 <th>Quantity</th>
                                 <th>Due</th>
                                 <th>Username</th>
-                                <th>Item ID</th>
-                                <th>Customer ID</th>
+                                <th>Item Name</th>
+                                <th>Customer Name</th>
                                 <th>Amount Paid</th>
                             </tr>
                         </thead>
@@ -56,8 +56,8 @@
                                 <td>{{ $purchase->purchaseQuantity }}</td>
                                 <td>{{ $purchase->amountDue }}</td>
                                 <td>{{ $purchase->User_username }}</td>
-                                <td>{{ $purchase->Item_itemID }}</td>
-                                <td>{{ $purchase->Customers_customerID }}</td>
+                                <td>{{ $purchase->item->itemName }}</td>
+                                <td>{{ $purchase->customer->first_name }}</td>
                                 <td>{{ $purchase->payAmount }}</td>
                             </tr>
                             @endforeach
@@ -69,6 +69,7 @@
                         </tbody>
                     </table>
                 </div>
+                <a href="{{ route('sales.export') }}" class="btn btn-primary">Download</a>
             </div>
         </div>
         @endif

@@ -32,8 +32,8 @@
             <thead>
                 <tr>
                     <th>Rental ID</th>
-                    <th>Item ID</th>
-                    <th>Customer ID</th>
+                    <th>Item Name</th>
+                    <th>Customer Name</th>
                     <th>Rental Date</th>
                     <th>Return Date</th>
                     <th>Quantity</th>
@@ -48,8 +48,8 @@
                 @foreach ($rentals as $rental)
                 <tr>
                     <td>{{ $rental->rentalID }}</td>
-                    <td>{{ $rental->Item_itemID }}</td>
-                    <td>{{ $rental->Customers_customerID }}</td>
+                    <td>{{ $rental->item->itemName }}</td>
+                    <td>{{ $rental->customer->first_name }}</td>
                     <td>{{ $rental->rentalDate }}</td>
                     <td>{{ $rental->returnDate }}</td>
                     <td>{{ $rental->quantity }}</td>

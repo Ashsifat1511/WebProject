@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RentalsExport;
+use App\Exports\SalesExport;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Rental;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 use function Symfony\Component\String\b;
 
@@ -34,13 +38,15 @@ class AdminController extends Controller
     {
         $rentals = Rental::all();
 
+        $customers = Customer::all();
+
         $totalRentals = $rentals->count();
 
         $totalAmount = $rentals->sum('paid');
 
         $totalDue = $rentals->sum('amountDue');
 
-        return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'totalDue'));
+        return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'totalDue', 'customers'));
     }
 
     public function showUsers()
@@ -83,5 +89,15 @@ class AdminController extends Controller
         $employee = User::find($id);
         $employee->delete();
         return redirect()->route('admin.employee')->with('success', 'Employee deleted successfully');
+    }
+
+    public function exportRentals()
+    {
+        return Excel::download(new RentalsExport, 'rentals.xlsx');
+    }
+
+    public function exportSales()
+    {
+        return Excel::download(new SalesExport, 'sales-report.xlsx');
     }
 }

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->date('rentalDate');
             $table->date('returnDate')->nullable();
             $table->double('quantity');
-            $table->double('paid')->nullable();
-            $table->double('amountDue')->nullable();
+            $table->double('paid');
+            $table->double('amountDue');
             $table->string('User_username');
             $table->unsignedBigInteger('Item_itemID');
             $table->unsignedBigInteger('Customers_customerID');
