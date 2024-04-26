@@ -39,14 +39,14 @@ body {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #f44;
+    background-color: rgb(215, 195, 195);
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #c33;
+    background-color: rgb(14, 10, 10);
 }
 
 /* Content Area Styling */

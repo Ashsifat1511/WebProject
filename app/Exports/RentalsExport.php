@@ -34,8 +34,8 @@ class RentalsExport implements FromCollection, WithHeadings, WithMapping
             $rental->rentalDate,
             $rental->returnDate,
             $rental->quantity,
-            $rental->paid,
-            $this->formatAmountDue($rental->amountDue),  
+            $rental->paid ? $rental->paid : '0',
+            $rental->amountDue ? $rental->amountDue : '0',
             $rental->user ? $rental->user->name : '', 
             $rental->isReturned ? 'Yes' : 'No'
         ];
@@ -66,8 +66,8 @@ class RentalsExport implements FromCollection, WithHeadings, WithMapping
     {
         return [
             'Rental ID',
-            'Item ID',
-            'Customer ID',
+            'Item Name',
+            'Customer Name',
             'Rental Date',
             'Return Date',
             'Quantity',

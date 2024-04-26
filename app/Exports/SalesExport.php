@@ -32,11 +32,12 @@ class SalesExport implements FromCollection, WithHeadings, WithMapping
             $purchase->purchaseID,
             $purchase->purchaseDate,
             $purchase->purchaseQuantity,
-            $purchase->amountDue, // Use null coalescence to ensure 0 is shown if amountDue is null or unset
-            $purchase->user ? $purchase->user->username : 'No User', // Display user's username if available
-            $purchase->item ? $purchase->item->itemName : 'No Item', // Display item's name if available
-            $purchase->customer ? $purchase->customer->first_name : 'No Customer', // Display customer's first name if available
-            $purchase->payAmount
+            $purchase->payAmount ? $purchase->payAmount : '0',
+            $purchase->amountDue ? $purchase->amountDue : '0',
+            $purchase->user ? $purchase->user->username : 'No User',
+            $purchase->item ? $purchase->item->itemName : 'No Item',
+            $purchase->customer ? $purchase->customer->first_name : 'No Customer'
+            
         ];
     }
 
@@ -51,11 +52,11 @@ class SalesExport implements FromCollection, WithHeadings, WithMapping
             'Purchase ID',
             'Purchase Date',
             'Quantity',
+            'Amount Paid',
             'Due',
             'Sold By',
             'Item Name',
-            'Customer Name',
-            'Amount Paid'
+            'Customer Name'            
         ];
     }
 }

@@ -93,7 +93,7 @@ class AdminController extends Controller
 
     public function exportRentals()
     {
-        return Excel::download(new RentalsExport, 'rentals.xlsx');
+        return Excel::download(new RentalsExport, 'rentals-report.xlsx');
     }
 
     public function exportSales()
