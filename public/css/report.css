@@ -1,126 +1,88 @@
+/* General Body Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
     color: #333;
 }
 
+/* Content Area */
 .content {
-    margin-left: 100px; /* Consistent left margin */
+    background: white;
     padding: 20px;
-    width: calc(100% - 250px); /* Adjust width to not overflow past viewport */
-    min-height: 100vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.success, .alert {
+/* Headers */
+.header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    text-align: left;
     padding: 12px;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+/* Alerts */
+.alert {
+    padding: 10px;
+    margin-top: 20px;
     border-radius: 5px;
-    border: 1px solid transparent;
+    color: white;
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    background-color: #4CAF50;
 }
 
 .alert-error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+    background-color: #f44336;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.headercontent {
-    flex: 1;
-    padding-left: 20px;
-}
-
-.showitem {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    overflow-x: auto; /* Keeps overflow as needed for smaller screens */
-}
-
-.showitem table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Forces table cells to respect set widths */
-}
-
-.showitem th, .showitem td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #e7e7e7;
-    word-wrap: break-word; /* Allows text to break and wrap within the cell */
-}
-
-.showitem th {
-    background-color: #4a69bd;
-    color: #ffffff;
-}
-
-.showitem tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.showitem tr:hover {
-    background-color: #f1f1f1;
-    transition: background-color 0.3s ease;
-}
-
-.showitem a, .showitem button {
-    color: #4a69bd;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.showitem a:hover {
-    text-decoration: underline;
-}
-
-.showitem button {
-    background: none;
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #007BFF;
     border: none;
-    padding: 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
 }
 
-.showitem img {
-    width: 24px;
-    vertical-align: middle;
+.btn:hover {
+    background-color: #0056b3;
 }
 
-/* Media Queries for responsive adjustments */
-@media (max-width: 768px) {
-    .content {
-        margin-left: 20px;
-        width: calc(100% - 40px); /* Adjust width for smaller screens */
-    }
-
-    .header, .headercontent, .showitem {
-        flex-direction: column; /* Stack elements vertically */
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        margin-left: 10px;
-        width: calc(100% - 20px); /* Further adjustment for very small screens */
-    }
-
-    .showitem table, .showitem th, .showitem td {
-        padding: 8px; /* Smaller padding for tighter spaces */
-    }
-
-    .showitem th, .showitem td {
-        font-size: smaller; /* Smaller font size for better readability on small devices */
-    }
+/* Utility Classes */
+.divide {
+    border-top: 2px solid #eee;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

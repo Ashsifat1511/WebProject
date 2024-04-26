@@ -70,5 +70,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/add-employee', [AdminController::class, 'addEmployee'])->name('admin.add-employee');
     Route::post('/admin/add-employee', [AdminController::class, 'storeEmployee'])->name('admin.add-employee.post');
     Route::delete('/admin/employee/{id}', [AdminController::class, 'destroy'])->name('employees.destroy');
+    Route::get('/admin/rentals/export', [AdminController::class, 'exportRentals'])->name('rentals.export');
+    Route::get('/admin/sales/export', [AdminController::class, 'exportSales'])->name('sales.export');
 });
 Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');

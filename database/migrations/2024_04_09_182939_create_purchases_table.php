@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id('purchaseID');
             $table->string('purchaseDate');
             $table->integer('purchaseQuantity');
-            $table->double('amountDue')->nullable();
+            $table->double('amountDue');
             $table->string('User_username'); // Foreign key to users table
             $table->unsignedBigInteger('Item_itemID'); // Foreign key to items table
             $table->unsignedBigInteger('Customers_customerID'); // Foreign key to customers table
-            $table->double('payAmount')->nullable();
+            $table->double('payAmount');
             $table->timestamps();
 
             // Define foreign key constraints
