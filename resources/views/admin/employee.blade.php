@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee List</title>
-    <link rel="stylesheet" href="{{asset('css/report.css')}}">
+    <link rel="stylesheet" href="{{asset('css/list.css')}}">
 </head>
 
 <body>
@@ -67,11 +67,18 @@
                                 <td>{{ $employee->email }}</td>
                                 <td>{{ $employee->role }}</td>
                                 <td>
+                                    @if((auth()->user()->role === 'Admin' && auth()->user()->id==$employee->id)||$employee->role === 'Employee')
+                                    <a href="{{ route('employees.edit', $employee->id) }}"><img src="{{asset('icons/edit.png')}}"></a>
                                     <form action="{{ route('employees.destroy', $employee->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" onclick="return confirm('Are you sure you want to delete this employee?')">Delete</button>
                                     </form>
+                                    @endif
+                                    @if($employee->role === 'Admin' && auth()->user()->id!=$employee->id)
+                                    Can't Edit or Delete
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

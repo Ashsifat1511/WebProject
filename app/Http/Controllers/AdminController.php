@@ -100,4 +100,31 @@ class AdminController extends Controller
     {
         return Excel::download(new SalesExport, 'sales-report.xlsx');
     }
+
+    public function editEmployee($id)
+    {
+        $employee = User::find($id);
+        return view('admin.edit', compact('employee'));
+    }
+
+    public function updateEmployee(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required|email',
+            'role' => 'required'
+        ]);
+
+        $employee = User::find($id);
+
+        $employee->name = $request->name;
+        $employee->username = $request->username;
+        $employee->email = $request->email;
+        $employee->role = $request->role;
+
+        $employee->save();
+
+        return redirect()->route('admin.employee')->with('success', 'Employee updated successfully');
+    }
 }
