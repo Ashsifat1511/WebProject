@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -24,7 +25,8 @@ class AccountController extends Controller
     }
     public function create()
     {
-        return view('accounts.create');
+        $customers = Customer::all();
+        return view('accounts.create', compact('customers'));
     }
 
     public function store(Request $request)
@@ -33,11 +35,21 @@ class AccountController extends Controller
             'accountName' => 'required',
             'accountDetails' => 'required',
             'Customers_customerID' => 'required|exists:customers,id',
-            'User_username' => 'required|exists:users,username',
             'payMethod' => 'required',
         ]);
 
-        Account::create($request->all());
+        $account = Account::create([
+            'accountName' => $request->input('accountName'),
+            'accountDetails' => $request->input('accountDetails'),
+            'Customers_customerID' => $request->input('Customers_customerID'),
+            'User_username' => auth()->user()->username, // This will be the username of the currently logged in user
+            'payMethod' => $request->input('payMethod'),
+        ]);
+
+        
+        if(!$account){
+            return back()->with('error', 'Failed to create account.');
+        }
 
         return redirect()->route('accounts.index')->with('success', 'Account created successfully.');    
 

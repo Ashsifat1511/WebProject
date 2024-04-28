@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('/admin/employee/{id}', [AdminController::class, 'destroy'])->name('employees.destroy');
     Route::get('/admin/rentals/export', [AdminController::class, 'exportRentals'])->name('rentals.export');
     Route::get('/admin/sales/export', [AdminController::class, 'exportSales'])->name('sales.export');
-    Route::get('/admin/employee/{id}/edit', [AdminController::class, 'editEmployee'])->name('employees.edit');
-    Route::put('/admin/employee/{id}', [AdminController::class, 'updateEmployee'])->name('employees.update');
+    Route::get('/admin/show-employee/{id}/edit', [AdminController::class, 'editEmployee'])->name('employees.edit');
+    Route::put('/admin/show-employee/{id}', [AdminController::class, 'updateEmployee'])->name('employees.update');
 });
 Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');

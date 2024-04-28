@@ -28,6 +28,13 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('1234'),
                 'role' => 'Employee',
             ],
+            [
+                'name' => 'Efty Hasan',
+                'username' => 'efty',
+                'email' => 'eft@email.com',
+                'password' => bcrypt('1234'),
+                'role' => 'Admin',
+            ],
         ];
 
         DB::table('users')->insert($users);

@@ -64,7 +64,7 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'username' => 'required|unique:users,username', 
+            'username' => 'required|unique:users,username',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'role' => 'required'
@@ -79,11 +79,11 @@ class AdminController extends Controller
         $user = User::create($data);
 
         if (!$user) {
-            return redirect()-back()->with('error', 'Failed to add employee');
+            return redirect() - back()->with('error', 'Failed to add employee');
         }
         return redirect()->route('admin.employee')->with('success', 'Addition successful');
     }
-    
+
     public function destroy($id)
     {
         $employee = User::find($id);
@@ -111,19 +111,25 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'username' => 'required',
-            'email' => 'required|email',
+            'username' => 'required|unique:users,username,' . $id,
+            'email' => 'required|email|unique:users,email,' . $id,
+            'password' => 'required',
             'role' => 'required'
         ]);
 
-        $employee = User::find($id);
+        $employee = User::findOrFail($id);
 
         $employee->name = $request->name;
         $employee->username = $request->username;
         $employee->email = $request->email;
+        $employee->password = Hash::make($request->password);
         $employee->role = $request->role;
 
         $employee->save();
+
+        if (!$employee) {
+            return redirect()->back()->with('error', 'Failed to update employee');
+        }
 
         return redirect()->route('admin.employee')->with('success', 'Employee updated successfully');
     }

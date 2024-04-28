@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('accountDetails')->nullable();
             $table->unsignedBigInteger('Customers_customerID');
             $table->string('User_username');
-            $table->string('payMethod')->nullable();
+            $table->enum('payMethod', ['Cash', 'Card', 'Cheque']);
             $table->timestamps();
 
             // Define foreign key constraints

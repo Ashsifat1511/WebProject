@@ -40,7 +40,7 @@
                     <th>Account ID</th>
                     <th>Account Name</th>
                     <th>Account Details</th>
-                    <th>Customer ID</th>
+                    <th>Customer</th>
                     <th> Issued By</th>
                     <th>Pay Method</th>
                 </tr>
@@ -51,7 +51,7 @@
                     <td>{{ $account->accountID }}</td>
                     <td>{{ $account->accountName }}</td>
                     <td>{{ $account->accountDetails }}</td>
-                    <td>{{ $account->Customers_customerID }}</td>
+                    <td>{{ $account->customer->first_name }}</td>
                     <td>{{ $account->User_username }}</td>
                     <td>{{ $account->payMethod }}</td>
                 </tr>

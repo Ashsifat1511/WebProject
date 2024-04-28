@@ -34,8 +34,12 @@
                     <input type="text" id="accountDetails" name="accountDetails">
                 </div>
                 <div>
-                    <Label for="Customer_customerID">Customer:</Label>
-                    <input type="text" id="Customers_customerID" name="Customers_customerID">
+                <label for="Customers_customerID">Customer:</label>
+                    <select name="Customers_customerID" id="Customers_customerID">
+                        @foreach ($customers as $customer)
+                        <option value="{{ $customer->id }}">{{ $customer->first_name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div>
                     <label for="User_username">Issued By:</label>
@@ -43,7 +47,11 @@
                 </div>
                 <div>
                     <label for="payMethod">Pay Method:</label>
-                    <input type="text" id="payMethod" name="payMethod">
+                    <select name="payMethod" id="payMethod">
+                        <option value="Cash">Cash</option>
+                        <option value="Card">Card</option>
+                        <option value="Cheque">Cheque</option>
+                    </select>
                 </div>
                 <button type="submit">Add</button>
             </form>
