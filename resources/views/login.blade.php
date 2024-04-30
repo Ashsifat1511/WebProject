@@ -42,6 +42,7 @@
                 <input type="password" class="form-control" name="password">
             </div>
             <button type="submit" class="form-button">Log in</button>
+            <button type="button" class="form-button" onclick="window.location='{{route('register')}}'">Register</button>
         </form>
     </div>
 </body>

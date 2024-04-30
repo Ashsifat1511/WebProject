@@ -15,17 +15,14 @@ return new class extends Migration
             $table->id('purchaseID');
             $table->string('purchaseDate');
             $table->integer('purchaseQuantity');
-            $table->double('amountDue');
-            $table->string('User_username'); // Foreign key to users table
-            $table->unsignedBigInteger('Item_itemID'); // Foreign key to items table
-            $table->unsignedBigInteger('Customers_customerID'); // Foreign key to customers table
+            $table->unsignedBigInteger('Item_itemID');
+            $table->unsignedBigInteger('Customers_customerID');
             $table->double('payAmount');
             $table->timestamps();
 
             // Define foreign key constraints
-            $table->foreign('User_username')->references('username')->on('users');
             $table->foreign('Item_itemID')->references('itemID')->on('items');
-            $table->foreign('Customers_customerID')->references('id')->on('customers'); // Fixing the foreign key column name
+            $table->foreign('Customers_customerID')->references('id')->on('customers');
         });
     }
 

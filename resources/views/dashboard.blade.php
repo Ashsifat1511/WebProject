@@ -57,15 +57,7 @@
                 <h3>Total Rent Amount Today: ${{ $totalRentToday }}</h3>
                 </div>
             </div>
-            <div class ="overview">
-                <h2>Overview:</h2>
-                <br>
-                <h4>Today's Due: ${{ $totalDueToday }}</h4>
-                <br>
-                <h4>Out of stock: {{ $outOfStock }}</h4>
-                <br>
-                <h4>Total Due: ${{ $totalDue }}</h4>
-            </div>
+            
         </div>
     </div>
 

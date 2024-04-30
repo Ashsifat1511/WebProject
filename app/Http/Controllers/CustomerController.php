@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -25,7 +27,7 @@ class CustomerController extends Controller
 
     public function create()
     {
-        return view('customer.create');
+        return view('register');
     }
 
     public function store(Request $request)
@@ -34,8 +36,10 @@ class CustomerController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
+            'username' => 'required|exists:users,username',
             'address' => 'required',
             'phone' => 'required',
+            'password' => 'required',
             'email' => 'required|email|unique:customers',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'gender' => 'required'
@@ -45,8 +49,10 @@ class CustomerController extends Controller
         $customer = new Customer();
         $customer->first_name = $request->input('first_name');
         $customer->last_name = $request->input('last_name');
+        $customer->username = $request->input('username');
         $customer->address = $request->input('address');
         $customer->phone = $request->input('phone');
+        $customer->password = Hash::make($request->password);
         $customer->email = $request->input('email');
         $customer->gender = $request->input('gender');
         if ($request->hasFile('photo')) {
@@ -60,7 +66,19 @@ class CustomerController extends Controller
 
         $customer->save();
 
-        return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
+        $user = new User;
+
+        $name = $customer->first_name + $customer->last_name;
+
+        $user->name = $name;
+        $user->email = $request->input('email');
+        $user->username = $request->input('username');
+        $user->password = Hash::make($request->password);
+        $user->role = 'Customer';
+
+        $user->save();
+
+        return redirect()->route('login')->with('success', 'Customer created successfully.');
     }
 
     public function edit($id)

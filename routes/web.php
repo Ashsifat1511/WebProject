@@ -9,13 +9,24 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\RentalController;
 use App\Http\Controllers\SellController;
-use App\Http\Controllers\UpdateDueController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', [AuthManager::class, 'login'])->name('login');
 Route::post('/', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::get('/register', [AuthManager::class, 'register'])->name('register');
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    
+    //all routes for home
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/gaming', [HomeController::class, 'gaming'])->name('gaming');
+    Route::get('/electronics', [HomeController::class, 'electronics'])->name('electronics');
+    Route::get('/others', [HomeController::class, 'others'])->name('others');
+    Route::get('/search', [HomeController::class, 'search'])->name('home.search');
+
 
 
     //all routes for items
@@ -74,5 +85,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/sales/export', [AdminController::class, 'exportSales'])->name('sales.export');
     Route::get('/admin/show-employee/{id}/edit', [AdminController::class, 'editEmployee'])->name('employees.edit');
     Route::put('/admin/show-employee/{id}', [AdminController::class, 'updateEmployee'])->name('employees.update');
+
+
+    //all routes for profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('users.profile');
+    Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('profiles.update');
+    
+
+    //all routes for cart
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+
 });
 Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');

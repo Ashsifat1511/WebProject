@@ -1,0 +1,76 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the page */
+    background-color: #f4f4f4; /* Light grey background for the page */
+    margin: 0;
+    padding: 20px;
+    color: #333; /* Dark grey text color */
+}
+
+/* Content area styling */
+.content {
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds subtle shadow to the content area */
+}
+
+/* Form styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Creates a two-column layout for labels and inputs */
+    grid-gap: 10px; /* Adds space between grid items */
+    padding: 20px;
+}
+
+form label {
+    font-weight: bold; /* Makes labels bold */
+    padding-right: 10px; /* Adds space between labels and inputs */
+    text-align: right; /* Aligns the text of the labels to the right */
+    align-self: center; /* Vertically centers the text within its container */
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form select,
+form input[type="file"] {
+    width: 100%; /* Makes input fields take up all available width */
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensures padding does not affect the overall width */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounds the corners of the input fields */
+}
+
+button {
+    grid-column: span 2; /* Makes the button span across both columns */
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Changes background on hover for better user feedback */
+}
+
+/* Alert box styling */
+.alert {
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #28a745; /* Green background for success messages */
+}
+
+.alert-error {
+    background-color: #dc3545; /* Red background for error messages */
+}

@@ -25,18 +25,12 @@ class DashboardController extends Controller
 
         // Fetch total due from purchase  for today
 
-        $totalDueToday = Purchase::whereDate('purchaseDate', Carbon::today())->sum('amountDue');
-        
-        // Fetch total due from rental  for today
-        $totalDueToday += Rental::whereDate('rentalDate', Carbon::today())->sum('amountDue');
         $recentPurchases = Purchase::all();
         $rentals = Rental::all();
-        $totalDue = $recentPurchases->sum('amountDue');
-        $totalDue += $rentals->sum('amountDue');
 
         //check the total number of items which are out of stock
         $outOfStock = Item::where('stock', 0)->count();
 
-        return view('dashboard', compact('totalSellToday', 'totalRentToday', 'totalDueToday', 'totalDue', 'outOfStock'));
+        return view('dashboard', compact('totalSellToday', 'totalRentToday', 'outOfStock'));
     }
 }
