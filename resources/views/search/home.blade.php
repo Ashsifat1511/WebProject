@@ -74,6 +74,16 @@
                         <a href="{{ route('others') }}">Others</a>
                     </div>
                     <span class="toggle_icon" onclick="openNav()"><img src="{{ asset('images/toggle-icon.png') }}"></span>
+                    <div class="header_box">
+                        <div class="login_menu">
+                            <ul>
+                                <li><a href="{{ route('cart') }}">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        <span class="padding_10">Cart</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,7 +121,7 @@
                                         <p class="price_text">Price <span style="color: #262626;">${{ $item->price }}</span></p>
                                         <div class="tshirt_img"><img src="{{ asset('uploads/items/'.$item->photo) }}"></div>
                                         <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Add to cart</a></div>
+                                            <div class="buy_bt"><a href="{{ route('add_to_cart', $item->itemID) }}">Add to cart</a></div>
                                         </div>
                                     </div>
                                 </div>

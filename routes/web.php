@@ -11,6 +11,8 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\SellController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', [AuthManager::class, 'login'])->name('login');
 Route::post('/', [AuthManager::class, 'loginPost'])->name('login.post');
@@ -19,7 +21,7 @@ Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.p
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    
+
     //all routes for home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/gaming', [HomeController::class, 'gaming'])->name('gaming');
@@ -90,10 +92,17 @@ Route::group(['middleware' => 'auth'], function () {
     //all routes for profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('users.profile');
     Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('profiles.update');
-    
+
+
+    //all routes for stripe
+    Route::post('/session', [StripeController::class, 'session'])->name('session');
+    Route::get('/success', [StripeController::class, 'success'])->name('success');
+    Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel');
 
     //all routes for cart
-    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
-
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+    Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+    Route::patch('/update-cart', [CartController::class, 'update'])->name('update_cart');
+    Route::delete('/remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
 });
 Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');

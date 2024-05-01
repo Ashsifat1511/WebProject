@@ -82,7 +82,7 @@
                     <div class="header_box">
                         <div class="login_menu">
                             <ul>
-                                <li><a href="#">
+                            <li><a href="{{ route('cart') }}">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span class="padding_10">Cart</span></a>
                                 </li>
@@ -125,12 +125,7 @@
                                         <p class="price_text">Price <span style="color: #262626;">${{ $item->price }}</span></p>
                                         <div class="tshirt_img"><img src="{{ asset('uploads/items/'.$item->photo) }}"></div>
                                         <div class="btn_main">
-                                            <form action="{{ route('home') }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $item->id }}">
-                                                <input type="number" name="quantity">
-                                                <button type="submit" class="buy_bt">Add to Cart</button>
-                                            </form>
+                                            <div class="buy_bt"><a href="{{ route('add_to_cart', $item->itemID) }}">Add to cart</a></div>
                                         </div>
                                     </div>
                                 </div>
