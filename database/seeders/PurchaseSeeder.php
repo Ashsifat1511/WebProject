@@ -20,8 +20,8 @@ class PurchaseSeeder extends Seeder
                 'Item_itemID' => 2,
                 'Customers_customerID' => 1,
                 'payAmount' => 10000.00,
-                'created_at' => '2021-01-01 00:00:00',
-                'updated_at' => '2021-01-01 00:00:00',
+                'created_at' => now(), 
+                'updated_at' => now(),
             ],
             [
                 'purchaseDate' => '2021-01-02',
@@ -29,8 +29,8 @@ class PurchaseSeeder extends Seeder
                 'Item_itemID' => 2,
                 'Customers_customerID' => 2,
                 'payAmount' => 4000.00,
-                'created_at' => '2021-01-02 00:00:00',
-                'updated_at' => '2021-01-02 00:00:00',
+                'created_at' => now(), 
+                'updated_at' => now(),
             ],
         ];
 

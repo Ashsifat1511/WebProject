@@ -14,9 +14,8 @@ class Item extends Model
         'itemName',
         'stock',
         'rentalOrSale',
-        'salePrice',
-        'rentRate',
+        'price',
         'photo',
-        'ItemType_itemTypeId',
+        'itemType',
     ];
 }
