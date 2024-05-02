@@ -43,7 +43,7 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-6. Add your stripe credenttials at '.env' file for payment gateway using
+6. Add your stripe credenttials at `.env` file for payment gateway using
 ```
 STRIPE_KEY=pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxx
 STRIPE_SECRET=sk_test_xxxxxxxxxxxxxxxxxxxxxxxx
