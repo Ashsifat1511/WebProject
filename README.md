@@ -39,25 +39,30 @@ php artisan key:generate
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=social_app_db
+DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-6. Start XAMPP Control Panel and start the MySQL server.
-7. Run the migration with seeders
+6. Add your stripe credenttials at '.env' file for payment gateway using
+```
+STRIPE_KEY=pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxx
+STRIPE_SECRET=sk_test_xxxxxxxxxxxxxxxxxxxxxxxx
+```
+7. Start XAMPP Control Panel and start the MySQL server.
+8. Run the migration with seeders
 ```
 php artisan migrate --seed
 ```
-8. Start the web server
+9. Start the web server
 ```
 php artisan serve
 ```
-9. Credentials for admin
+10. Credentials for admin
 ```
 Username: sifatashrarul
 Password: 1234
 ```
-10. For Customer use Registration
+11. For Customer use Registration
 ## Support and Contact
 
 For any assistance or inquiries, feel free to connect with me on sifatashrarul@gmail.com
