@@ -31,6 +31,10 @@ class DashboardController extends Controller
         //check the total number of items which are out of stock
         $outOfStock = Item::where('stock', 0)->count();
 
+        if (auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
+
         return view('dashboard', compact('totalSellToday', 'totalRentToday', 'outOfStock'));
     }
 }

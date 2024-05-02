@@ -18,6 +18,9 @@ class AdminController extends Controller
 {
     public function index()
     {
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
         return view('admin.index');
     }
 
@@ -28,6 +31,10 @@ class AdminController extends Controller
         $totalSells = $recentPurchases->count();
 
         $totalAmount = $recentPurchases->sum('payAmount');
+
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
 
         return view('admin.sells', compact('recentPurchases', 'totalSells', 'totalAmount', 'totalDue'));
     }
@@ -42,17 +49,32 @@ class AdminController extends Controller
 
         $totalAmount = $rentals->sum('paid');
 
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
+
         return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'totalDue', 'customers'));
     }
 
     public function showUsers()
     {
         $employees = User::where('role', 'Admin')->orWhere('role', 'Employee')->get();
+
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
+
+
         return view('admin.employee', compact('employees'));
     }
 
     public function addEmployee()
     {
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
+
+
         return view('admin.add-employee');
     }
 
@@ -101,6 +123,10 @@ class AdminController extends Controller
     public function editEmployee($id)
     {
         $employee = User::find($id);
+
+        if(auth()->user()->role == 'Customer') {
+            return view('denial.user');
+        }
         return view('admin.edit', compact('employee'));
     }
 

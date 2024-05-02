@@ -52,11 +52,12 @@ php artisan migrate --seed
 ```
 php artisan serve
 ```
-9. Credentials
+9. Credentials for admin
 ```
 Username: sifatashrarul
 Password: 1234
 ```
+10. For Customer use Registration
 ## Support and Contact
 
 For any assistance or inquiries, feel free to connect with me on sifatashrarul@gmail.com

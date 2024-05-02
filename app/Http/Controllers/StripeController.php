@@ -81,6 +81,11 @@ class StripeController extends Controller
             }
             session()->forget('cart');
             DB::commit();
+
+            if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
+                return view('denial.admin');
+            }
+
             return view('success');
         } catch (\Exception $e) {
             DB::rollback();
@@ -90,6 +95,9 @@ class StripeController extends Controller
 
     public function cancel()
     {
+        if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
+            return view('denial.admin');
+        }
         return view('cancel');
     }
 }

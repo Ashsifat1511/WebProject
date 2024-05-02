@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Success</title>
+    <title>Access Denied</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Payment Success</div>
+                    <div class="card-header">Unauthorized Access!</div>
                     <div class="card-body text-center">
-                        <h1>Thank you for your order!</h1>
-                        <p>You have just completed your payment.</p>
+                        <h1>Can't Access</h1>
+                        <p>You can't access this page</p>
                         <p id="countdown">You will be redirected to the home page in 10 seconds.</p>
                     </div>
                 </div>
@@ -24,7 +26,7 @@
     <script>
         let seconds = 10;
         const countdownElement = document.getElementById('countdown');
-        
+
         const interval = setInterval(function() {
             seconds--;
             countdownElement.textContent = 'You will be redirected to the home page in ' + seconds + ' seconds.';
@@ -35,4 +37,5 @@
         }, 1000);
     </script>
 </body>
+
 </html>

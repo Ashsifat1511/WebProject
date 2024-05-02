@@ -9,6 +9,12 @@ class CartController extends Controller
 {
     public function cart()
     {
+        
+        if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
+            return view('denial.admin');
+        }
+
+
         return view('cart');
     }
     public function addToCart($id)
@@ -29,6 +35,12 @@ class CartController extends Controller
         }
 
         session()->put('cart', $cart);
+
+        if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
+            return view('denial.admin');
+        }
+
+        
         return redirect()->back()->with('success', 'Product add to cart successfully!');
     }
 

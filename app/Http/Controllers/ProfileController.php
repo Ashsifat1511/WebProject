@@ -14,6 +14,12 @@ class ProfileController extends Controller
     {
         $sells = Purchase::where('Customers_customerID', auth()->user()->customer->id)->get();
         $rentals = Rental::where('Customers_customerID', auth()->user()->customer->id)->get();
+
+        if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
+            return view('denial.admin');
+        }
+
+
         return view('profiles.index', compact('sells', 'rentals'));
     }
 
@@ -57,10 +63,5 @@ class ProfileController extends Controller
         } catch (\Exception $e) {
             return back()->withErrors('Update failed: ' . $e->getMessage());
         }
-    }
-
-    public function cart(Request $request)
-    {
-        return view('register');
     }
 }
