@@ -16,7 +16,7 @@ class RentalsExport implements FromCollection, WithHeadings, WithMapping
     public function collection()
     {
         // Eager load related models to optimize the query
-        return Rental::with(['user', 'item', 'customer'])->get();
+        return Rental::with(['item', 'customer'])->get();
     }
 
     /**
@@ -28,15 +28,13 @@ class RentalsExport implements FromCollection, WithHeadings, WithMapping
     public function map($rental): array
     {
         return [
-            $rental->rentalID,
+            $rental->id,
             $rental->item ? $rental->item->itemName : '',  
             $rental->customer ? $rental->customer->first_name : '',  
             $rental->rentalDate,
             $rental->returnDate,
-            $rental->quantity,
+            $rental->quantity? $rental->quantity : '0',
             $rental->paid ? $rental->paid : '0',
-            $rental->amountDue ? $rental->amountDue : '0',
-            $rental->user ? $rental->user->name : '', 
             $rental->isReturned ? 'Yes' : 'No'
         ];
     }
@@ -72,8 +70,6 @@ class RentalsExport implements FromCollection, WithHeadings, WithMapping
             'Return Date',
             'Quantity',
             'Paid',
-            'Amount Due',
-            'Processed By',
             'Returned'
         ];
     }

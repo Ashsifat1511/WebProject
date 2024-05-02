@@ -41,8 +41,7 @@
                     <th>Name</th>
                     <th>Stock</th>
                     <th>Rental/Sale</th>
-                    <th>Sale Price</th>
-                    <th>Rent Rate</th>
+                    <th>Price</th>
                     <th>Photo</th>
                     <th>Item Type</th>
                     <th>Actions</th>
@@ -55,8 +54,7 @@
                     <td>{{ $item->itemName }}</td>
                     <td>{{ $item->stock }}</td>
                     <td>{{ $item->rentalOrSale }}</td>
-                    <td>{{ $item->salePrice }}</td>
-                    <td>{{ $item->rentRate }}</td>
+                    <td>{{ $item->price }}</td>
                     <td><img src="{{ asset('uploads/items/' . $item->photo) }}" alt="photo" style="width: 100px; height: 100px;"></td>
                     <td>{{ $item->itemType }}</td>
                     <td>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Purchase extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'purchaseID';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'purchaseDate', 'purchaseQuantity',  'Item_itemID', 'Customers_customerID', 'payAmount'

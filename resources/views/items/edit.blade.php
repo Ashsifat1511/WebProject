@@ -42,12 +42,8 @@
                     </select>
                 </div>
                 <div>
-                    <label for="salePrice">Sale Price:</label>
-                    <input type="text" id="salePrice" name="salePrice" value="{{ $item->salePrice }}">
-                </div>
-                <div>
-                    <label for="rentRate">Rent Rate:</label>
-                    <input type="text" id="rentRate" name="rentRate" value="{{ $item->rentRate }}">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price" value="{{ $item->price }}">
                 </div>
                 <div>
                     <label for="photo">Photo:</label>
@@ -58,8 +54,6 @@
                     <select id="itemType" name="itemType">
                         <option value="Electronics">Electronics</option>
                         <option value="Gaming">Gaming</option>
-                        <option value="Furniture">Furniture</option>
-                        <option value="Books">Books</option>
                         <option value="Others">Others</option>
                     </select>
                 </div>

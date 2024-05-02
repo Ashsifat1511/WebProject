@@ -41,12 +41,8 @@
                     </select>
                 </div>
                 <div>
-                    <label for="salePrice">Sale Price:</label>
-                    <input type="text" id="salePrice" name="salePrice">
-                </div>
-                <div>
-                    <label for="rentRate">Rent Rate:</label>
-                    <input type="text" id="rentRate" name="rentRate">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price">
                 </div>
                 <div>
                     <label for="photo">Photo:</label>
@@ -57,8 +53,6 @@
                     <select id="itemType" name="itemType">
                         <option value="1">Electronics</option>
                         <option value="2">Gaming</option>
-                        <option value="3">Furniture</option>
-                        <option value="4">Books</option>
                         <option value="5">Others</option>
                     </select>
                 </div>

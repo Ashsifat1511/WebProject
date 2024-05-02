@@ -145,12 +145,6 @@
             </div>
             @endforeach
          </div>
-         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-         </a>
-         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-         </a>
       </div>
    </div>
    <!-- fashion section end -->
@@ -180,12 +174,6 @@
             </div>
             @endforeach
          </div>
-         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-         </a>
-         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-         </a>
       </div>
    </div>
    <!-- electronic section end -->
@@ -215,12 +203,6 @@
             </div>
             @endforeach
          </div>
-         <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-         </a>
-         <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-         </a>
       </div>
    </div>
    <!-- jewellery  section end -->

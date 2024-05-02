@@ -34,8 +34,7 @@ class ItemController extends Controller
         'itemName' => 'required',
         'stock' => 'required',
         'rentalOrSale' => 'required',
-        'salePrice' => 'required',
-        'rentRate' => 'required',
+        'price' => 'required',
         'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         'itemType' => 'required'
     ]);
@@ -45,8 +44,7 @@ class ItemController extends Controller
     $item->itemName = $validatedData['itemName'];
     $item->stock = $validatedData['stock'];
     $item->rentalOrSale = $validatedData['rentalOrSale'];
-    $item->salePrice = $validatedData['salePrice'];
-    $item->rentRate = $validatedData['rentRate'];
+    $item->price = $validatedData['price'];
     $item->itemType = $validatedData['itemType'];
     if ($request->hasFile('photo')) {
         $photo = $request->file('photo');
@@ -74,8 +72,7 @@ class ItemController extends Controller
         'itemName' => 'required',
         'stock' => 'required|numeric',
         'rentalOrSale' => 'required',
-        'salePrice' => 'required|numeric',
-        'rentRate' => 'required|numeric',
+        'price' => 'required|numeric',
         'photo' => 'sometimes|image|mimes:jpeg,png,jpg,gif|max:2048',
         'itemType' => 'required'
     ]);
@@ -86,8 +83,7 @@ class ItemController extends Controller
         $item->itemName = $request->input('itemName');
         $item->stock = $request->input('stock');
         $item->rentalOrSale = $request->input('rentalOrSale');
-        $item->salePrice = $request->input('salePrice');
-        $item->rentRate = $request->input('rentRate');
+        $item->price = $request->input('price');
         
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');

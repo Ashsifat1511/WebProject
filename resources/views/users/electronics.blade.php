@@ -46,7 +46,7 @@
                     <div class="col-sm-12">
                         <div class="custom_menu">
                             <ul>
-                                <li><a href="route('users.profile')">{{ auth()->user()->name }}</a></li>
+                                <<li><a href="/profile">{{ auth()->user()->name }}</a></li>
                                 <li>
                                     <form action="{{route('logout')}}" method="post">
                                         @csrf
@@ -82,7 +82,7 @@
                     <div class="header_box">
                         <div class="login_menu">
                             <ul>
-                            <li><a href="{{ route('cart') }}">
+                                <li><a href="{{ route('cart') }}">
                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span class="padding_10">Cart</span></a>
                                 </li>
@@ -135,12 +135,6 @@
                 </div>
                 @endforeach
             </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-            </a>
         </div>
     </div>
     <div class="footer_section layout_padding">
