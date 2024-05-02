@@ -23,10 +23,6 @@
 </div>
 <hr class="divide" />
 <div class="main">
-    <div class="add">
-        <h4>Add New Purchase: </h4>
-        <a href="{{ route('sells.create') }}"><img src="icons/add.png"></a>
-    </div>
     <div class="showitem">
         <table>
             <thead>
@@ -34,28 +30,20 @@
                     <th>Purchase ID</th>
                     <th>Purchase Date</th>
                     <th>Quantity</th>
-                    <th>Due</th>
-                    <th>Sold By</th>
                     <th>Item Name</th>
                     <th>Customer Name</th>
                     <th>Amount Paid</th>
-                    <th>Update Dues</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($recentPurchases as $purchase)
                 <tr>
-                    <td>{{ $purchase->purchaseID }}</td>
+                    <td>{{ $purchase->id }}</td>
                     <td>{{ $purchase->purchaseDate }}</td>
                     <td>{{ $purchase->purchaseQuantity }}</td>
-                    <td>{{ $purchase->amountDue }}</td>
-                    <td>{{ $purchase->User_username }}</td>
                     <td>{{ $purchase->item->itemName }}</td>
                     <td>{{ $purchase->customer->first_name }}</td>
                     <td>{{ $purchase->payAmount }}</td>
-                    <td>
-                        <a href="{{ route('sells.update-due', $purchase->purchaseID) }}"><img src="icons/update.png"></a>
-                    </td>
                 </tr>
                 @endforeach
             </tbody>

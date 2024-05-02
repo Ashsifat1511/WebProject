@@ -41,8 +41,6 @@
                                 <th>Purchase ID</th>
                                 <th>Purchase Date</th>
                                 <th>Quantity</th>
-                                <th>Due</th>
-                                <th>Username</th>
                                 <th>Item Name</th>
                                 <th>Customer Name</th>
                                 <th>Amount Paid</th>
@@ -51,11 +49,9 @@
                         <tbody>
                             @foreach ($recentPurchases as $purchase)
                             <tr>
-                                <td>{{ $purchase->purchaseID }}</td>
+                                <td>{{ $purchase->id }}</td>
                                 <td>{{ $purchase->purchaseDate }}</td>
                                 <td>{{ $purchase->purchaseQuantity }}</td>
-                                <td>{{ $purchase->amountDue }}</td>
-                                <td>{{ $purchase->User_username }}</td>
                                 <td>{{ $purchase->item->itemName }}</td>
                                 <td>{{ $purchase->customer->first_name }}</td>
                                 <td>{{ $purchase->payAmount }}</td>
@@ -64,7 +60,6 @@
                             <tr>
                                 <td colspan="4">Total Sells: {{ $totalSells }}</td>
                                 <td colspan="3">Total Amount: {{ $totalAmount }}</td>
-                                <td>Total Due: {{ $totalDue }}</td>
                             </tr>
                         </tbody>
                     </table>

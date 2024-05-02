@@ -29,10 +29,6 @@
             <button type="submit"><img src="icons/search.png"></button>
         </form>
     </div>
-    <div class="add">
-        <h4>Add New Customer: </h4>
-        <a href="{{ route('customers.create') }}"><img src="icons/add.png"></a>
-    </div>
     <div class="showitem">
         <table>
             <thead>
@@ -40,6 +36,7 @@
                     <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Username</th>
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Email</th>
@@ -54,13 +51,13 @@
                     <td>{{ $customer->id }}</td>
                     <td>{{ $customer->first_name }}</td>
                     <td>{{ $customer->last_name }}</td>
+                    <td>{{ $customer->username }}</td>
                     <td>{{ $customer->address }}</td>
                     <td>{{ $customer->phone }}</td>
                     <td>{{ $customer->email }}</td>
                     <td>{{ $customer->gender}}</td>
                     <td><img src="{{ asset('uploads/customers/' . $customer->photo) }}" alt="photo" style="width: 100px; height: 100px;"></td>
                     <td>
-                        <a href="{{ route('customers.edit', $customer->id) }}"><img src="icons/edit.png"></a>
                         <form action="{{ route('customers.destroy', $customer->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

@@ -45,28 +45,23 @@
                                 <th>Return Date</th>
                                 <th>Quantity</th>
                                 <th>Paid</th>
-                                <th>Amount Due</th>
-                                <th>Processed By</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($rentals as $rental)
                             <tr>
-                                <td>{{ $rental->rentalID }}</td>
+                                <td>{{ $rental->id }}</td>
                                 <td>{{ $rental->item->itemName }}</td>
                                 <td>{{ $rental->customer->first_name }}</td>
                                 <td>{{ $rental->rentalDate }}</td>
                                 <td>{{ $rental->returnDate }}</td>
                                 <td>{{ $rental->quantity }}</td>
                                 <td>{{ $rental->paid }}</td>
-                                <td>{{ $rental->amountDue }}</td>
-                                <td>{{ $rental->User_username }}</td>
                             </tr>
                             @endforeach
                             <tr>
                                 <td colspan="6">Total Rentals: {{ $totalRentals }}</td>
                                 <td colspan="2">Total Amount Paid: {{ $totalAmount }}</td>
-                                <td>Total Amount Due: {{ $totalDue }}</td>
                             </tr>
                         </tbody>
                     </table>

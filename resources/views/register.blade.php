@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Customer</title>
-    <link rel="stylesheet" href="{{asset('css/table.css')}}">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{asset('css/register.css')}}">
 </head>
 
 <body>
@@ -23,28 +23,35 @@
             @endif
         </div>
         <div class="item">
-            <form action="{{ route('customers.update', $customer->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('register.post') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
                 <div>
                     <label for="first_name">First Name:</label>
-                    <input type="text" id="first_name" name="first_name" value="{{ $customer->first_name }}">
+                    <input type="text" id="first_name" name="first_name">
                 </div>
                 <div>
                     <label for="last_name">Last Name:</label>
-                    <input type="text" id="last_name" name="last_name" value="{{ $customer->last_name }}">
+                    <input type="text" id="last_name" name="last_name">
+                </div>
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
                 </div>
                 <div>
                     <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" value="{{ $customer->address }}">
+                    <input type="text" id="address" name="address">
                 </div>
                 <div>
                     <label for="phone">Phone:</label>
-                    <input type="text" id="phone" name="phone" value="{{ $customer->phone }}">
+                    <input type="text" id="phone" name="phone">
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="{{ $customer->email }}">
+                    <input type="email" id="email" name="email">
                 </div>
                 <div>
                     <label for="photo">Photo:</label>
@@ -53,11 +60,11 @@
                 <div>
                     <label for="gender">Gender:</label>
                     <select id="gender" name="gender">
-                        <option value="Male" {{ $customer->gender == 'Male' ? 'selected' : '' }}>Male</option>
-                        <option value="Female" {{ $customer->gender == 'Female' ? 'selected' : '' }}>Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
-                <button type="submit">Update Customer</button>
+                <button type="submit">Register</button>
             </form>
         </div>
     </div>

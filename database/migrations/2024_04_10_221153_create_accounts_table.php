@@ -16,13 +16,10 @@ return new class extends Migration
             $table->string('accountName')->unique();
             $table->string('accountDetails')->nullable();
             $table->unsignedBigInteger('Customers_customerID');
-            $table->string('User_username');
             $table->enum('payMethod', ['Cash', 'Card', 'Cheque']);
             $table->timestamps();
 
-            // Define foreign key constraints
             $table->foreign('Customers_customerID')->references('id')->on('customers');
-            $table->foreign('User_username')->references('username')->on('users');
         });
     }
 

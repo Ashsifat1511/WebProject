@@ -11,7 +11,7 @@ class SellController extends Controller
 {
     public function index()
     {
-        $recentPurchases = Purchase::orderBy('purchaseID', 'desc')->limit(10)->get();
+        $recentPurchases = Purchase::all();
 
         return view('sells.index', ['recentPurchases' => $recentPurchases]);
     }

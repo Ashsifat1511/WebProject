@@ -17,7 +17,7 @@ class SalesExport implements FromCollection, WithHeadings, WithMapping
     public function collection()
     {
         // Eager load the related user, item, and customer models
-        return Purchase::with(['user', 'item', 'customer'])->get();
+        return Purchase::with(['item', 'customer'])->get();
     }
 
     /**
@@ -29,12 +29,10 @@ class SalesExport implements FromCollection, WithHeadings, WithMapping
     public function map($purchase): array
     {
         return [
-            $purchase->purchaseID,
+            $purchase->id,
             $purchase->purchaseDate,
             $purchase->purchaseQuantity,
             $purchase->payAmount ? $purchase->payAmount : '0',
-            $purchase->amountDue ? $purchase->amountDue : '0',
-            $purchase->user ? $purchase->user->username : 'No User',
             $purchase->item ? $purchase->item->itemName : 'No Item',
             $purchase->customer ? $purchase->customer->first_name : 'No Customer'
             
@@ -53,8 +51,6 @@ class SalesExport implements FromCollection, WithHeadings, WithMapping
             'Purchase Date',
             'Quantity',
             'Amount Paid',
-            'Due',
-            'Sold By',
             'Item Name',
             'Customer Name'            
         ];

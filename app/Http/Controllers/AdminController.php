@@ -29,8 +29,6 @@ class AdminController extends Controller
 
         $totalAmount = $recentPurchases->sum('payAmount');
 
-        $totalDue = $recentPurchases->sum('amountDue');
-
         return view('admin.sells', compact('recentPurchases', 'totalSells', 'totalAmount', 'totalDue'));
     }
 
@@ -44,14 +42,12 @@ class AdminController extends Controller
 
         $totalAmount = $rentals->sum('paid');
 
-        $totalDue = $rentals->sum('amountDue');
-
         return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'totalDue', 'customers'));
     }
 
     public function showUsers()
     {
-        $employees = User::all();
+        $employees = User::where('role', 'Admin')->orWhere('role', 'Employee')->get();
         return view('admin.employee', compact('employees'));
     }
 
@@ -74,7 +70,8 @@ class AdminController extends Controller
         $data['username'] = $request->username;
         $data['email'] = $request->email;
         $data['password'] = Hash::make($request->password);
-        $data['role'] = $request->role; // Assign selected role from the form
+        $data['role'] = $request->role;
+        $data['cid'] = null;
 
         $user = User::create($data);
 

@@ -12,20 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rentals', function (Blueprint $table) {
-            $table->id('rentalID');
+            $table->id();
             $table->date('rentalDate');
-            $table->date('returnDate')->nullable();
+            $table->date('returnDate');
             $table->double('quantity');
             $table->double('paid');
-            $table->double('amountDue');
-            $table->string('User_username');
             $table->unsignedBigInteger('Item_itemID');
             $table->unsignedBigInteger('Customers_customerID');
             $table->boolean('isReturned')->default(false);
             $table->timestamps();
 
-            // Define foreign key constraints
-            $table->foreign('User_username')->references('username')->on('users');
             $table->foreign('Item_itemID')->references('itemID')->on('items');
             $table->foreign('Customers_customerID')->references('id')->on('customers');
         });

@@ -16,11 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
+            $table->unsignedBigInteger('cid')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role', ['Admin', 'Employee']);
+            $table->enum('role', ['Admin', 'Employee','Customer']);
+            $table->mediumText('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('cid')->references('id')->on('customers')->onDelete('cascade');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

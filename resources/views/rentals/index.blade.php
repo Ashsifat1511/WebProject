@@ -23,10 +23,6 @@
 </div>
 <hr class="divide" />
 <div class="main">
-    <div class="add">
-        <h4>Add New Rent: </h4>
-        <a href="{{ route('rentals.create') }}"><img src="icons/add.png"></a>
-    </div>
     <div class="showitem">
         <table>
             <thead>
@@ -38,24 +34,19 @@
                     <th>Return Date</th>
                     <th>Quantity</th>
                     <th>Paid</th>
-                    <th>Amount Due</th>
-                    <th>Processed By</th>
                     <th>Return Status</th>
-                    <th>Update Due</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($rentals as $rental)
                 <tr>
-                    <td>{{ $rental->rentalID }}</td>
+                    <td>{{ $rental->id }}</td>
                     <td>{{ $rental->item->itemName }}</td>
                     <td>{{ $rental->customer->first_name }}</td>
                     <td>{{ $rental->rentalDate }}</td>
                     <td>{{ $rental->returnDate }}</td>
                     <td>{{ $rental->quantity }}</td>
                     <td>{{ $rental->paid }}</td>
-                    <td>{{ $rental->amountDue }}</td>
-                    <td>{{ $rental->User_username }}</td>
                     <td>
                         @if ($rental->isReturned)
                         Returned
@@ -63,7 +54,6 @@
                         Not Returned
                         @endif
                     </td>
-                    <td><a href="{{ route('rentals.update-due', $rental->rentalID) }}"><img src="icons/update.png"></a></td>
                 </tr>
                 @endforeach
             </tbody>

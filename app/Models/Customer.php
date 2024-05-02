@@ -11,10 +11,13 @@ class Customer extends Model
     protected $fillable = [
         'first_name',
         'last_name',
+        'username',
+        'cid',
         'address',
         'phone',
         'email',
         'photo',
+        'password',
         'gender',
         'member_since',
     ];
@@ -27,5 +30,11 @@ class Customer extends Model
         return [
             'member_since' => 'date',
         ];
+    }
+    //define the relationship with the User model (One-to-Many)
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'cid', 'id');
     }
 }

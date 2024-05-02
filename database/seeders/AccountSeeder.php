@@ -18,21 +18,18 @@ class AccountSeeder extends Seeder
                 'accountName' => 'Account 1',
                 'accountDetails' => 'Details for Account 1',
                 'Customers_customerID' => 1,
-                'User_username' => 'sifatashrarul',
                 'payMethod' => 'Cheque',
             ],
             [
                 'accountName' => 'Account 2',
                 'accountDetails' => 'Details for Account 2',
                 'Customers_customerID' => 2,
-                'User_username' => 'sifatashrarul',
                 'payMethod' => 'Cash',
             ],
             [
                 'accountName' => 'Account 3',
                 'accountDetails' => 'Details for Account 3',
                 'Customers_customerID' => 3,
-                'User_username' => 'sifatashrarul09',
                 'payMethod' => 'Card',
             ],
         ];

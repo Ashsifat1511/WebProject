@@ -18,7 +18,6 @@
                 <li><a href="/customers">Customers</a></li>
                 <li><a href="/sells">Sells</a></li>
                 <li><a href="/rentals">Rentals</a></li>
-                <li><a href="/accounts">Accounts</a></li>
                 @if (auth()->user()->role === 'Admin')
                 <li><a href="/admin">Administrative</a></li>
                 @endif
@@ -57,15 +56,7 @@
                 <h3>Total Rent Amount Today: ${{ $totalRentToday }}</h3>
                 </div>
             </div>
-            <div class ="overview">
-                <h2>Overview:</h2>
-                <br>
-                <h4>Today's Due: ${{ $totalDueToday }}</h4>
-                <br>
-                <h4>Out of stock: {{ $outOfStock }}</h4>
-                <br>
-                <h4>Total Due: ${{ $totalDue }}</h4>
-            </div>
+            
         </div>
     </div>
 

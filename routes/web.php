@@ -9,19 +9,30 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\RentalController;
 use App\Http\Controllers\SellController;
-use App\Http\Controllers\UpdateDueController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', [AuthManager::class, 'login'])->name('login');
 Route::post('/', [AuthManager::class, 'loginPost'])->name('login.post');
+Route::get('/register', [AuthManager::class, 'register'])->name('register');
+Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
+    //all routes for home
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/gaming', [HomeController::class, 'gaming'])->name('gaming');
+    Route::get('/electronics', [HomeController::class, 'electronics'])->name('electronics');
+    Route::get('/others', [HomeController::class, 'others'])->name('others');
+    Route::get('/search', [HomeController::class, 'search'])->name('home.search');
+
+
+
     //all routes for items
     Route::get('/items', [ItemController::class, 'index'])->name('items.index');
-    //Route::get('/items/search', [ItemController::class, 'search'])->name('items.search');
-    //Route::post('/items/search', [ItemController::class, 'search'])->name('items.search');
     Route::match(['get', 'post'], '/items/search', [ItemController::class, 'search'])->name('items.search');
     Route::get('/items/create', [ItemController::class, 'create'])->name('items.create');
     Route::post('/items', [ItemController::class, 'store'])->name('items.store');
@@ -33,34 +44,17 @@ Route::group(['middleware' => 'auth'], function () {
     //all routes for customers
     Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
     Route::get('/customers/search', [CustomerController::class, 'search'])->name('customers.search');
-    Route::get('/customers/create', [CustomerController::class, 'create'])->name('customers.create');
-    Route::post('/customers', [CustomerController::class, 'store'])->name('customers.store');
-    Route::get('/customers/{id}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
-    Route::put('/customers/{id}', [CustomerController::class, 'update'])->name('customers.update');
     Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customers.destroy');
 
     //all routes for sells
     Route::get('/sells', [SellController::class, 'index'])->name('sells.index');
-    Route::get('/sells/create', [SellController::class, 'create'])->name('sells.create');
-    Route::post('/sells', [SellController::class, 'store'])->name('sells.store');
-    Route::get('/sells/{id}/update-due', [SellController::class, 'update'])->name('sells.update-due');
-    Route::put('/sells/{id}', [SellController::class, 'updateDue'])->name('sells.update-due.post');
 
 
     //all routes for rentals
     Route::get('/rentals', [RentalController::class, 'index'])->name('rentals.index');
-    Route::get('/rentals/create', [RentalController::class, 'create'])->name('rentals.create');
-    Route::post('/rentals', [RentalController::class, 'store'])->name('rentals.store');
-    Route::get('/rentals/{id}/update-due', [RentalController::class, 'update'])->name('rentals.update-due');
-    Route::put('/rentals/{id}', [RentalController::class, 'updateDue'])->name('rentals.update-due.post');
+    
 
-
-    //all routes for accounts
-    Route::get('/accounts', [AccountController::class, 'index'])->name('accounts.index');
-    Route::get('/accounts/search', [AccountController::class, 'search'])->name('accounts.search');
-    Route::get('/accounts/create', [AccountController::class, 'create'])->name('accounts.create');
-    Route::post('/accounts', [AccountController::class, 'store'])->name('accounts.store');
-
+    
 
     //all routes for admin
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -74,5 +68,22 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/sales/export', [AdminController::class, 'exportSales'])->name('sales.export');
     Route::get('/admin/show-employee/{id}/edit', [AdminController::class, 'editEmployee'])->name('employees.edit');
     Route::put('/admin/show-employee/{id}', [AdminController::class, 'updateEmployee'])->name('employees.update');
+
+
+    //all routes for profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('users.profile');
+    Route::post('/profile', [ProfileController::class, 'updateProfile'])->name('profiles.update');
+
+
+    //all routes for stripe
+    Route::post('/session', [StripeController::class, 'session'])->name('session');
+    Route::get('/success', [StripeController::class, 'success'])->name('success');
+    Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel');
+
+    //all routes for cart
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+    Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add_to_cart');
+    Route::patch('/update-cart', [CartController::class, 'update'])->name('update_cart');
+    Route::delete('/remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
 });
 Route::post('/logout', [AuthManager::class, 'logout'])->name('logout');
