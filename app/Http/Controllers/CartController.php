@@ -34,7 +34,9 @@ class CartController extends Controller
             ];
         }
 
+        
         session()->put('cart', $cart);
+
 
         if(auth()->user()->role == 'Admin'|| auth()->user()->role == 'Employee'){
             return view('denial.admin');

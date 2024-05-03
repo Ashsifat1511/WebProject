@@ -18,11 +18,19 @@ class StripeController extends Controller
         Stripe::setApiKey(config('stripe.sk'));
 
         foreach (session('cart') as $id => $details) {
+
+            $item = Item::findOrFail($id);
+            
+            if ($details['quantity'] > $item->stock) {
+                return redirect()->back()->with('error', 'Not enough stock for ' . $item->itemName .'. Available stock: ' . $item->stock);
+            }
+
+
             $product_name = $details['product_name'];
             $total = $details['price'];
             $quantity = $details['quantity'];
 
-            $unit_amount = $total * 100; // Convert total to cents for Stripe
+            $unit_amount = $total * 100;
 
             $productItems[] = [
                 'price_data' => [
