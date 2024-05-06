@@ -51,9 +51,9 @@
                 <div>
                     <label for="itemType">Item Type:</label>
                     <select id="itemType" name="itemType">
-                        <option value="1">Electronics</option>
-                        <option value="2">Gaming</option>
-                        <option value="5">Others</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
                 <button type="submit">Add Item</button>
