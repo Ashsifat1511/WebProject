@@ -18,7 +18,6 @@
                 <li><a href="/customers">Customers</a></li>
                 <li><a href="/sells">Sells</a></li>
                 <li><a href="/rentals">Rentals</a></li>
-                <li><a href="/update-due">Update Due</a></li>
                 @if (auth()->user()->role === 'Admin')
                 <li><a href="/admin">Administrative</a></li>
                 @endif

@@ -36,7 +36,7 @@ class AdminController extends Controller
             return view('denial.user');
         }
 
-        return view('admin.sells', compact('recentPurchases', 'totalSells', 'totalAmount', 'totalDue'));
+        return view('admin.sells', compact('recentPurchases', 'totalSells', 'totalAmount'));
     }
 
     public function showRentals()
@@ -53,7 +53,7 @@ class AdminController extends Controller
             return view('denial.user');
         }
 
-        return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'totalDue', 'customers'));
+        return view('admin.rentals', compact('rentals', 'totalRentals', 'totalAmount', 'customers'));
     }
 
     public function showUsers()
