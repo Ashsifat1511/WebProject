@@ -25,6 +25,7 @@ class CartController extends Controller
 
         if (isset($cart[$id])) {
             $cart[$id]['quantity']++;
+            $cart[$id]['price'] = $product->price * $cart[$id]['quantity'];
         } else {
             $cart[$id] = [
                 "product_name" => $product->itemName,

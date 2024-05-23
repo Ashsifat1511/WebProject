@@ -37,7 +37,7 @@ class StripeController extends Controller
                     'product_data' => [
                         'name' => $product_name,
                     ],
-                    'currency'     => 'USD',
+                    'currency'     => 'BDT',
                     'unit_amount'  => $unit_amount,
                 ],
                 'quantity' => $quantity
@@ -83,7 +83,7 @@ class StripeController extends Controller
                         'purchaseQuantity' => $details['quantity'],
                         'Item_itemID' => $id,
                         'Customers_customerID' => auth()->user()->customer->id,
-                        'payAmount' => $details['price'],
+                        'payAmount' => $details['price']*$details['quantity'],
                     ]);
                 }
             }

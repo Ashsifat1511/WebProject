@@ -138,10 +138,11 @@
         </div>
     </div>
     <div class="footer_section layout_padding">
-        <div class="container">
-            <div class="location_main">Help Line Number : <a href="#">+8801212341234</a></div>
-        </div>
-    </div>
+      <div class="container">
+         <div class="location_main">Help Line Number : <a href="#">+8801521582847</a></div>
+         <div class="location_main">Email : <a href="#">sifatashrarul@gmail.com</a></div>
+      </div>
+   </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
