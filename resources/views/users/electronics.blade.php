@@ -122,7 +122,7 @@
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
                                         <h4 class="shirt_text">{{ $item->itemName }}</h4>
-                                        <p class="price_text">Price <span style="color: #262626;">${{ $item->price }}</span></p>
+                                        <p class="price_text">Price <span style="color: #262626;">BDT {{ $item->price }}</span></p>
                                         <div class="tshirt_img"><img src="{{ asset('uploads/items/'.$item->photo) }}"></div>
                                         <div class="btn_main">
                                             <div class="buy_bt"><a href="{{ route('add_to_cart', $item->itemID) }}">Add to cart</a></div>
