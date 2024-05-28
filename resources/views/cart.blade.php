@@ -6,6 +6,7 @@
     {{ session('error') }}
 </div>
 @endif
+<h3>N.B: Rental is for 7 days only from the purchase date</h3>
 <table id="cart" class="table table-hover table-condensed">
     <thead>
         <tr>
@@ -49,6 +50,7 @@
             </td>
         </tr>
         <tr>
+            @if(session('cart'))
             <td colspan="5" style="text-align:right;">
                 <form action="/session" method="POST">
                     <a href="{{ url('/home') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
@@ -56,6 +58,14 @@
                     <button class="btn btn-success" type="submit" id="checkout-live-button"><i class="fa fa-money"></i> Checkout</button>
                 </form>
             </td>
+            @endif
+            @if(!session('cart'))
+            <td colspan="5" style="text-align:right;">
+                <form action="/session" method="POST">
+                    <a href="{{ url('/home') }}" class="btn btn-danger"> <i class="fa fa-arrow-left"></i> Continue Shopping</a>
+                </form>
+            </td>
+            @endif
         </tr>
     </tfoot>
 </table>

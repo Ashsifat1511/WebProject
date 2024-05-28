@@ -20,7 +20,7 @@ class ItemSeeder extends Seeder
                 'itemName' => 'Car',
                 'stock' => 10,
                 'rentalOrSale' => 'Rental',
-                'price' => 100.00, // Assuming the rental rate for 'Item 1' is $100.00
+                'price' => 10000.00, // Assuming the rental rate for 'Item 1' is $100.00
                 'photo' => 'car.jpg', // Assuming the photo is stored in 'public/storage/item1.jpg'
                 'itemType' => 'Others',
                 'created_at' => '2021-01-01 00:00:00',
@@ -30,7 +30,7 @@ class ItemSeeder extends Seeder
                 'itemName' => 'Computer',
                 'stock' => 10,
                 'rentalOrSale' => 'Sale',
-                'price' => 500.00, // Assuming the sale price for 'Item 2' is $500.00
+                'price' => 50000.00, // Assuming the sale price for 'Item 2' is $500.00
                 'photo' => 'computer.jpg', // Assuming the photo is stored in 'public/storage/item2.jpg'
                 'itemType' => 'Electronics',
                 'created_at' => '2021-01-01 00:00:00',
@@ -40,7 +40,7 @@ class ItemSeeder extends Seeder
                 'itemName' => 'Fifa 24',
                 'stock' => 100,
                 'rentalOrSale' => 'Sale',
-                'price' => 50.00, 
+                'price' => 5000.00, 
                 'photo' => 'fifa24.jpg', 
                 'itemType' => 'Gaming',
                 'created_at' => '2021-01-01 00:00:00',
