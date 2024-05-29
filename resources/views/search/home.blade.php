@@ -33,68 +33,68 @@
 
     <!-- Header -->
     <div class="navbar fixed top-0 z-50 bg-gray-300 shadow px-2 md:px-16 py-4 w-full">
-      <div class="flex-1">
-         <a href="/" class="cursor-pointer text-xl font-bold">
-            <img class="w-16 h-auto" src="images/banner-bg.png">
-         </a>
-      </div>
-      <div class="navbar-center hidden lg:flex">
-         <ul class="menu menu-horizontal px-1">
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li> <a href="{{ route('gaming') }}">Gaming</a></li>
-            <li> <a href="{{ route('electronics') }}">Electronic</a></li>
-            <li> <a href="{{ route('others') }}">Others</a></li>
-         </ul>
-      </div>
-      <div class="dropdown">
-         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
-         </div>
-         <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow right-0 w-52">
-            <li><a href="{{ route('home') }}">Home</a></li>
-            <li> <a href="{{ route('gaming') }}">Gaming</a></li>
-            <li> <a href="{{ route('electronics') }}">Electronic</a></li>
-            <li> <a href="{{ route('others') }}">Others</a></li>
-         </ul>
-      </div>
-      <div class="flex-none gap-2">
-         <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            @php
-            $cartLength = session('cart') ? count(session('cart')) : 0;
-            @endphp
-            <a href="/cart" class="indicator">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-               </svg>
-               <span class="badge badge-sm indicator-item">{{ $cartLength }}</span>
+        <div class="flex-1">
+            <a href="/" class="cursor-pointer text-xl font-bold">
+                <img class="w-16 h-auto" src="images/banner-bg.png">
             </a>
-         </div>
-         <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-               <div class="w-10 rounded-full">
-                  <img alt="Tailwind CSS Navbar component" src="{{ asset('uploads/customers/' . auth()->user()->photo) }}" />
-               </div>
-            </div>
-            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white text-black rounded-box w-52">
-               <li>
-                  <a class="justify-between">
-                     <a href="/profile">Profile
-                     </a>
-               </li>
-
-
-               <li>
-                  <form action="{{route('logout')}}" method="post">
-                     @csrf
-                     <button type="submit">Logout</button>
-                  </form>
-               </li>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li> <a href="{{ route('gaming') }}">Gaming</a></li>
+                <li> <a href="{{ route('electronics') }}">Electronic</a></li>
+                <li> <a href="{{ route('others') }}">Others</a></li>
             </ul>
-         </div>
-      </div>
-   </div>
+        </div>
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow right-0 w-52">
+                <li><a href="{{ route('home') }}">Home</a></li>
+                <li> <a href="{{ route('gaming') }}">Gaming</a></li>
+                <li> <a href="{{ route('electronics') }}">Electronic</a></li>
+                <li> <a href="{{ route('others') }}">Others</a></li>
+            </ul>
+        </div>
+        <div class="flex-none gap-2">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                @php
+                $cartLength = session('cart') ? count(session('cart')) : 0;
+                @endphp
+                <a href="/cart" class="indicator">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span class="badge badge-sm indicator-item">{{ $cartLength }}</span>
+                </a>
+            </div>
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                    <div class="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component" src="{{ asset('uploads/customers/' . auth()->user()->photo) }}" />
+                    </div>
+                </div>
+                <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-white text-black rounded-box w-52">
+                    <li>
+                        <a class="justify-between">
+                            <a href="/profile">Profile
+                            </a>
+                    </li>
+
+
+                    <li>
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <!-- hero section -->
 
@@ -126,7 +126,12 @@
                     </h2>
                     <p class="text-gray-600">Price: {{ $item->price }} Tk</p>
                     <div class="card-actions justify-end">
+                        @if ($item->rentalOrSale == 'Rental')
+                        <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add for Rental</a>
+                        @endif
+                        @if ($item->rentalOrSale == 'Sale')
                         <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add to cart</a>
+                        @endif
                     </div>
                 </div>
             </div>

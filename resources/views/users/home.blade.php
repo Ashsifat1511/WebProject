@@ -141,7 +141,12 @@
                </h2>
                <p class="text-gray-600">Price: {{ $item->price }} Tk</p>
                <div class="card-actions justify-end">
+                  @if ($item->rentalOrSale == 'Rental')
+                  <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add for Rental</a>
+                  @endif
+                  @if ($item->rentalOrSale == 'Sale')
                   <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add to cart</a>
+                  @endif
                </div>
             </div>
          </div>
@@ -164,7 +169,12 @@
                </h2>
                <p class="text-gray-600">Price: {{ $item->price }} Tk</p>
                <div class="card-actions justify-end">
+                  @if ($item->rentalOrSale == 'Rental')
+                  <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add for Rental</a>
+                  @endif
+                  @if ($item->rentalOrSale == 'Sale')
                   <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add to cart</a>
+                  @endif
                </div>
             </div>
          </div>
@@ -186,7 +196,12 @@
                </h2>
                <p class="text-gray-600">Price: {{ $item->price }} Tk</p>
                <div class="card-actions justify-end">
+                  @if ($item->rentalOrSale == 'Rental')
+                  <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add for Rental</a>
+                  @endif
+                  @if ($item->rentalOrSale == 'Sale')
                   <a href="{{ route('add_to_cart', $item->itemID) }}" class="btn btn-primary btn-sm text-black bg-white border border-primary hover:bg-primary hover:text-white duration-300 font-normal">Add to cart</a>
+                  @endif
                </div>
             </div>
          </div>
